@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="SyNet.GuiControls.ParameterEditControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             MinWidth="60" MinHeight="22">
+  <UserControl.Resources>
+    <ControlTemplate x:Key="validationTemplate">
+      <DockPanel>
+        <Border BorderBrush="Red" BorderThickness="1">
+          <AdornedElementPlaceholder/>
+        </Border>
+      </DockPanel>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type TextBox}">
+      <Style.Triggers>
+        <Trigger Property="Validation.HasError" Value="true">
+          <Setter Property="ToolTip"
+              Value="{Binding RelativeSource={x:Static RelativeSource.Self},
+                              Path=(Validation.Errors)[0].Exception.InnerException.Message}"/>
+        </Trigger>
+      </Style.Triggers>
+    </Style>
+  </UserControl.Resources>
+</UserControl>

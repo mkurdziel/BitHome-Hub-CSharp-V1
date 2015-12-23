@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Controller xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" XMLVersion="1">
+  <NodeManager PeriodicCheck="true">
+    <NodeList>
+      <Device xsi:type="DeviceXBee" ID="5526146518102914" DeviceName="Bookshelf LEDs" BeingInvestigated="false" NeedLightInvestigation="false" HaveFullCatalog="true" HaveFullParameters="true" IsUnknown="false" LastSeen="2010-06-11T21:12:26.3142855-06:00" ManufacturerID="43707" ProfileID="1" RevisionID="14" DeviceProvidesOwnName="false" DeviceNameFunctionID="-1" NetworkAddress="64053" SerialNumber="5526146518102914">
+        <Catalog>
+          <DeviceFunction ActionID="7883187356455191794" ID="1" DeviceID="5526146518102914" Name="FadeLights" ReturnType="VOID">
+            <Parameters>
+              <DeviceParameter ParamID="10450812628069778841" ParentParamID="0" Value="0" DependentParamID="0" Name="Red" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="1" DeviceID="5526146518102914" PreviousParamID="1546642395363984897" />
+              <DeviceParameter ParamID="10561288368615472028" ParentParamID="0" Value="0" DependentParamID="0" Name="Green" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="2" FunctionID="1" DeviceID="5526146518102914" PreviousParamID="8639283577755305583" />
+              <DeviceParameter ParamID="11921591049204164982" ParentParamID="0" Value="0" DependentParamID="0" Name="Blue" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="3" FunctionID="1" DeviceID="5526146518102914" PreviousParamID="8084565514103614342" />
+              <DeviceParameter ParamID="6825251555731538407" ParentParamID="0" Value="1000" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="4" FunctionID="1" DeviceID="5526146518102914" PreviousParamID="2384611028672769152" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="10686070899976659253" ID="2" DeviceID="5526146518102914" Name="FadeChannel" ReturnType="VOID">
+            <Parameters>
+              <DeviceParameter ParamID="11290366754082073075" ParentParamID="0" Value="0" DependentParamID="0" Name="Red" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="2" DeviceID="5526146518102914" PreviousParamID="450817867083296834" />
+              <DeviceParameter ParamID="5431473116728103840" ParentParamID="0" Value="0" DependentParamID="0" Name="Green" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="2" FunctionID="2" DeviceID="5526146518102914" PreviousParamID="1239737655774776730" />
+              <DeviceParameter ParamID="8560948687255356136" ParentParamID="0" Value="0" DependentParamID="0" Name="Blue" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="3" FunctionID="2" DeviceID="5526146518102914" PreviousParamID="15785312031244813256" />
+              <DeviceParameter ParamID="8827774135660386413" ParentParamID="0" Value="0" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="4" FunctionID="2" DeviceID="5526146518102914" PreviousParamID="10952132254254156179" />
+              <DeviceParameter ParamID="484453847690997531" ParentParamID="0" Value="0" DependentParamID="0" Name="Channel" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4" MaxStringLength="-1" IsSigned="false" ID="5" FunctionID="2" DeviceID="5526146518102914" PreviousParamID="16501676115985422190" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="17528003418184486584" ID="3" DeviceID="5526146518102914" Name="FadeNatural" ReturnType="VOID">
+            <Parameters>
+              <DeviceParameter ParamID="6491094410506657662" ParentParamID="0" Value="100" DependentParamID="0" Name="Percentage" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="100" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="3" DeviceID="5526146518102914" PreviousParamID="1269125611263458729" />
+              <DeviceParameter ParamID="5535839205606859915" ParentParamID="0" Value="1000" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="2" FunctionID="3" DeviceID="5526146518102914" PreviousParamID="10482291732671263672" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="298429090245055180" ID="4" DeviceID="5526146518102914" Name="GetRedValue" ReturnType="WORD">
+            <Parameters>
+              <DeviceParameter ParamID="4405660095644866371" ParentParamID="0" Value="0" DependentParamID="0" Name="Channel" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="4" DeviceID="5526146518102914" PreviousParamID="14971124831214701344" />
+              <DeviceParameter ParamID="1975473534890356017" ParentParamID="0" Value="0" DependentParamID="0" Name="RedBrightness" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="0" FunctionID="4" DeviceID="5526146518102914" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="10136094244771892568" ID="5" DeviceID="5526146518102914" Name="GetGreenValue" ReturnType="WORD">
+            <Parameters>
+              <DeviceParameter ParamID="2657758099679968055" ParentParamID="0" Value="0" DependentParamID="0" Name="Channel" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="5" DeviceID="5526146518102914" PreviousParamID="942027013910006416" />
+              <DeviceParameter ParamID="4728859498027087021" ParentParamID="0" Value="0" DependentParamID="0" Name="GreenBrightness" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="0" FunctionID="5" DeviceID="5526146518102914" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="7513433844922883016" ID="6" DeviceID="5526146518102914" Name="GetBlueValue" ReturnType="WORD">
+            <Parameters>
+              <DeviceParameter ParamID="2817318793802608911" ParentParamID="0" Value="0" DependentParamID="0" Name="Channel" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="6" DeviceID="5526146518102914" PreviousParamID="13607096288739403266" />
+              <DeviceParameter ParamID="18023265258236255386" ParentParamID="0" Value="0" DependentParamID="0" Name="BlueBrightness" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="0" FunctionID="6" DeviceID="5526146518102914" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+        </Catalog>
+      </Device>
+      <Device xsi:type="DeviceXBee" ID="5526146518102909" DeviceName="Hutch LEDs" BeingInvestigated="false" NeedLightInvestigation="false" HaveFullCatalog="true" HaveFullParameters="true" IsUnknown="false" LastSeen="2010-06-11T21:20:46.009567-06:00" ManufacturerID="43707" ProfileID="1" RevisionID="14" DeviceProvidesOwnName="false" DeviceNameFunctionID="-1" NetworkAddress="56340" SerialNumber="5526146518102909">
+        <Catalog>
+          <DeviceFunction ActionID="7059452564126880578" ID="1" DeviceID="5526146518102909" Name="FadeLights" ReturnType="VOID">
+            <Parameters>
+              <DeviceParameter ParamID="4781220303366705196" ParentParamID="0" Value="0" DependentParamID="0" Name="Red" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="1" DeviceID="5526146518102909" PreviousParamID="15766232482127271980" />
+              <DeviceParameter ParamID="10729605932994810053" ParentParamID="0" Value="0" DependentParamID="0" Name="Green" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="2" FunctionID="1" DeviceID="5526146518102909" PreviousParamID="10029045942190295646" />
+              <DeviceParameter ParamID="13691680256314459844" ParentParamID="0" Value="0" DependentParamID="0" Name="Blue" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="3" FunctionID="1" DeviceID="5526146518102909" PreviousParamID="17833867399563241145" />
+              <DeviceParameter ParamID="3630626370431681880" ParentParamID="0" Value="1000" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="4" FunctionID="1" DeviceID="5526146518102909" PreviousParamID="258198017655625057" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="13965471805234139310" ID="2" DeviceID="5526146518102909" Name="FadeChannel" ReturnType="VOID">
+            <Parameters>
+              <DeviceParameter ParamID="629229644674392934" ParentParamID="0" Value="0" DependentParamID="0" Name="Red" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="2" DeviceID="5526146518102909" PreviousParamID="12098626498051758388" />
+              <DeviceParameter ParamID="8216475188665295204" ParentParamID="0" Value="0" DependentParamID="0" Name="Green" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="2" FunctionID="2" DeviceID="5526146518102909" PreviousParamID="12603355912403293118" />
+              <DeviceParameter ParamID="10244936395524281804" ParentParamID="0" Value="0" DependentParamID="0" Name="Blue" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="3" FunctionID="2" DeviceID="5526146518102909" PreviousParamID="10219332458733719288" />
+              <DeviceParameter ParamID="3661330356396052430" ParentParamID="0" Value="0" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="4" FunctionID="2" DeviceID="5526146518102909" PreviousParamID="1233748619013550937" />
+              <DeviceParameter ParamID="5444212310147261165" ParentParamID="0" Value="0" DependentParamID="0" Name="Channel" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4" MaxStringLength="-1" IsSigned="false" ID="5" FunctionID="2" DeviceID="5526146518102909" PreviousParamID="14184174799642644660" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="12039557043414831362" ID="3" DeviceID="5526146518102909" Name="FadeNatural" ReturnType="VOID">
+            <Parameters>
+              <DeviceParameter ParamID="10310783990212252299" ParentParamID="0" Value="100" DependentParamID="0" Name="Percentage" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="100" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="3" DeviceID="5526146518102909" PreviousParamID="4866760629341174272" />
+              <DeviceParameter ParamID="1356208974091078910" ParentParamID="0" Value="1000" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="2" FunctionID="3" DeviceID="5526146518102909" PreviousParamID="15512791700193699052" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="3763124947365653332" ID="4" DeviceID="5526146518102909" Name="GetRedValue" ReturnType="WORD">
+            <Parameters>
+              <DeviceParameter ParamID="1238959005746856658" ParentParamID="0" Value="0" DependentParamID="0" Name="Channel" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="4" DeviceID="5526146518102909" PreviousParamID="10867982523838099974" />
+              <DeviceParameter ParamID="13580947868773934902" ParentParamID="0" Value="0" DependentParamID="0" Name="RedBrightness" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="0" FunctionID="4" DeviceID="5526146518102909" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="18222573899954714109" ID="5" DeviceID="5526146518102909" Name="GetGreenValue" ReturnType="WORD">
+            <Parameters>
+              <DeviceParameter ParamID="12993291483405928503" ParentParamID="0" Value="0" DependentParamID="0" Name="Channel" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="5" DeviceID="5526146518102909" PreviousParamID="12166927796355239411" />
+              <DeviceParameter ParamID="9954126094323836807" ParentParamID="0" Value="0" DependentParamID="0" Name="GreenBrightness" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="0" FunctionID="5" DeviceID="5526146518102909" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="13579320405606650003" ID="6" DeviceID="5526146518102909" Name="GetBlueValue" ReturnType="WORD">
+            <Parameters>
+              <DeviceParameter ParamID="6046174250567575128" ParentParamID="0" Value="0" DependentParamID="0" Name="Channel" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="6" DeviceID="5526146518102909" PreviousParamID="2561417481983143029" />
+              <DeviceParameter ParamID="5920497775617117967" ParentParamID="0" Value="0" DependentParamID="0" Name="BlueBrightness" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="0" FunctionID="6" DeviceID="5526146518102909" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="13731569642621700789" ID="7" DeviceID="5526146518102909" Name="ButtonPress" ReturnType="BYTE">
+            <Parameters>
+              <DeviceParameter ParamID="946113926479139610" ParentParamID="0" Value="1" DependentParamID="0" Name="ButtonNumber" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="1" MaximumValue="5" MaxStringLength="-1" IsSigned="false" ID="0" FunctionID="7" DeviceID="5526146518102909" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+        </Catalog>
+      </Device>
+      <Device xsi:type="DeviceXBee" ID="5526146518188130" DeviceName="Media LEDs" BeingInvestigated="false" NeedLightInvestigation="false" HaveFullCatalog="true" HaveFullParameters="true" IsUnknown="false" LastSeen="2010-05-27T00:16:43.6567326-06:00" ManufacturerID="43707" ProfileID="1" RevisionID="14" DeviceProvidesOwnName="false" DeviceNameFunctionID="-1" NetworkAddress="10143" SerialNumber="5526146518188130">
+        <Catalog>
+          <DeviceFunction ActionID="15693271923375263497" ID="1" DeviceID="5526146518188130" Name="FadeLights" ReturnType="VOID">
+            <Parameters>
+              <DeviceParameter ParamID="14902473226376226768" ParentParamID="0" Value="0" DependentParamID="0" Name="Red" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="1" DeviceID="5526146518188130" PreviousParamID="3698979638640143847" />
+              <DeviceParameter ParamID="3165563136175586419" ParentParamID="0" Value="0" DependentParamID="0" Name="Green" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="2" FunctionID="1" DeviceID="5526146518188130" PreviousParamID="10455205916246326878" />
+              <DeviceParameter ParamID="9549295258631891533" ParentParamID="0" Value="0" DependentParamID="0" Name="Blue" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="3" FunctionID="1" DeviceID="5526146518188130" PreviousParamID="230892758929872262" />
+              <DeviceParameter ParamID="8811014589220253022" ParentParamID="0" Value="1000" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="4" FunctionID="1" DeviceID="5526146518188130" PreviousParamID="6609383070288708981" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="3610896546141084208" ID="2" DeviceID="5526146518188130" Name="FadeChannel" ReturnType="VOID">
+            <Parameters>
+              <DeviceParameter ParamID="5398356468922433721" ParentParamID="0" Value="0" DependentParamID="0" Name="Red" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="2" DeviceID="5526146518188130" PreviousParamID="12621499680031142401" />
+              <DeviceParameter ParamID="9910672448697370910" ParentParamID="0" Value="0" DependentParamID="0" Name="Green" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="2" FunctionID="2" DeviceID="5526146518188130" PreviousParamID="11176558210921190327" />
+              <DeviceParameter ParamID="9620791547803749814" ParentParamID="0" Value="0" DependentParamID="0" Name="Blue" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="3" FunctionID="2" DeviceID="5526146518188130" PreviousParamID="2328619802176489528" />
+              <DeviceParameter ParamID="5336642189636306837" ParentParamID="0" Value="0" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="4" FunctionID="2" DeviceID="5526146518188130" PreviousParamID="813206418266132741" />
+              <DeviceParameter ParamID="14548931216847509795" ParentParamID="0" Value="0" DependentParamID="0" Name="Channel" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4" MaxStringLength="-1" IsSigned="false" ID="5" FunctionID="2" DeviceID="5526146518188130" PreviousParamID="16351959284859012729" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="1504382389553552348" ID="3" DeviceID="5526146518188130" Name="FadeNatural" ReturnType="VOID">
+            <Parameters>
+              <DeviceParameter ParamID="10808430083050904435" ParentParamID="0" Value="100" DependentParamID="0" Name="Percentage" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="100" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="3" DeviceID="5526146518188130" PreviousParamID="1572810494350839934" />
+              <DeviceParameter ParamID="14882636552505571172" ParentParamID="0" Value="1000" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="2" FunctionID="3" DeviceID="5526146518188130" PreviousParamID="11655702588922975777" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="7153634235224187529" ID="4" DeviceID="5526146518188130" Name="GetRedValue" ReturnType="WORD">
+            <Parameters>
+              <DeviceParameter ParamID="9776989329072230521" ParentParamID="0" Value="0" DependentParamID="0" Name="Channel" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="4" DeviceID="5526146518188130" PreviousParamID="7012176332943640987" />
+              <DeviceParameter ParamID="10267912674910177085" ParentParamID="0" Value="0" DependentParamID="0" Name="RedBrightness" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="0" FunctionID="4" DeviceID="5526146518188130" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="13419754148682448433" ID="5" DeviceID="5526146518188130" Name="GetGreenValue" ReturnType="WORD">
+            <Parameters>
+              <DeviceParameter ParamID="7147852769562528903" ParentParamID="0" Value="0" DependentParamID="0" Name="Channel" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="5" DeviceID="5526146518188130" PreviousParamID="9017025012471273011" />
+              <DeviceParameter ParamID="6025925173827609188" ParentParamID="0" Value="0" DependentParamID="0" Name="GreenBrightness" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="0" FunctionID="5" DeviceID="5526146518188130" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="12584583512914792602" ID="6" DeviceID="5526146518188130" Name="GetBlueValue" ReturnType="WORD">
+            <Parameters>
+              <DeviceParameter ParamID="10130710053085599388" ParentParamID="0" Value="0" DependentParamID="0" Name="Channel" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="6" DeviceID="5526146518188130" PreviousParamID="16202771945398363786" />
+              <DeviceParameter ParamID="9195457009983683087" ParentParamID="0" Value="0" DependentParamID="0" Name="BlueBrightness" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="0" FunctionID="6" DeviceID="5526146518188130" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+        </Catalog>
+      </Device>
+      <Device xsi:type="DeviceXBee" ID="5526146518105227" DeviceName="Unknown" BeingInvestigated="false" NeedLightInvestigation="false" HaveFullCatalog="true" HaveFullParameters="true" IsUnknown="false" LastSeen="2010-05-27T00:16:43.6411098-06:00" ManufacturerID="0" ProfileID="0" RevisionID="0" DeviceProvidesOwnName="false" DeviceNameFunctionID="-1" NetworkAddress="41337" SerialNumber="5526146518105227">
+        <Catalog>
+          <DeviceFunction ActionID="908441248291857434" ID="1" DeviceID="5526146518105227" Name="Fadelight" ReturnType="VOID">
+            <Parameters>
+              <DeviceParameter ParamID="9743005742770691632" ParentParamID="0" Value="0" DependentParamID="0" Name="Brightness" DataType="BYTE" ValidationType="UNSIGNED_FULL" MinimumValue="-1" MaximumValue="0" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="1" DeviceID="5526146518105227" PreviousParamID="12236839407895833117" />
+              <DeviceParameter ParamID="15459991370493269753" ParentParamID="0" Value="0" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="2" FunctionID="1" DeviceID="5526146518105227" PreviousParamID="4380808987850952083" />
+            </Parameters>
+          </DeviceFunction>
+        </Catalog>
+      </Device>
+      <Device xsi:type="DeviceXBee" ID="5526146518143168" DeviceName="PropSense03" BeingInvestigated="false" NeedLightInvestigation="false" HaveFullCatalog="true" HaveFullParameters="true" IsUnknown="false" LastSeen="2010-02-08T23:28:06.7314-07:00" ManufacturerID="19290" ProfileID="12369" RevisionID="6" DeviceProvidesOwnName="true" DeviceNameFunctionID="9" NetworkAddress="8352" SerialNumber="5526146518143168">
+        <Catalog>
+          <DeviceFunction ActionID="15073323006856521674" ID="1" DeviceID="5526146518143168" Name="Read TempF" ReturnType="STRING">
+            <Parameters>
+              <DeviceParameter ParamID="17689046044642228590" ParentParamID="0" Value="0" DependentParamID="0" Name="TempF" DataType="STRING" ValidationType="MAX_STRING_LEN" MinimumValue="-1" MaximumValue="0" MaxStringLength="6" IsSigned="false" ID="0" FunctionID="1" DeviceID="5526146518143168" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="8990846354868692605" ID="2" DeviceID="5526146518143168" Name="Read TempC" ReturnType="STRING">
+            <Parameters>
+              <DeviceParameter ParamID="17915287654240848038" ParentParamID="0" Value="0" DependentParamID="0" Name="TempC" DataType="STRING" ValidationType="MAX_STRING_LEN" MinimumValue="-1" MaximumValue="0" MaxStringLength="6" IsSigned="false" ID="0" FunctionID="2" DeviceID="5526146518143168" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="5284670741010554145" ID="3" DeviceID="5526146518143168" Name="Read RelH" ReturnType="STRING">
+            <Parameters>
+              <DeviceParameter ParamID="9910867738116820987" ParentParamID="0" Value="0" DependentParamID="0" Name="RelH" DataType="STRING" ValidationType="MAX_STRING_LEN" MinimumValue="-1" MaximumValue="0" MaxStringLength="6" IsSigned="false" ID="0" FunctionID="3" DeviceID="5526146518143168" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="11736239570432528331" ID="4" DeviceID="5526146518143168" Name="Read DewPtF" ReturnType="STRING">
+            <Parameters>
+              <DeviceParameter ParamID="12978645334371097751" ParentParamID="0" Value="0" DependentParamID="0" Name="DewPtF" DataType="STRING" ValidationType="MAX_STRING_LEN" MinimumValue="-1" MaximumValue="0" MaxStringLength="6" IsSigned="false" ID="0" FunctionID="4" DeviceID="5526146518143168" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="6257143359803755850" ID="5" DeviceID="5526146518143168" Name="Read DewPtC" ReturnType="STRING">
+            <Parameters>
+              <DeviceParameter ParamID="12353207177555891519" ParentParamID="0" Value="0" DependentParamID="0" Name="DewPtC" DataType="STRING" ValidationType="MAX_STRING_LEN" MinimumValue="-1" MaximumValue="0" MaxStringLength="6" IsSigned="false" ID="0" FunctionID="5" DeviceID="5526146518143168" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="3274076844012354015" ID="6" DeviceID="5526146518143168" Name="Read AuxTempF" ReturnType="STRING">
+            <Parameters>
+              <DeviceParameter ParamID="9617688171610002630" ParentParamID="0" Value="0" DependentParamID="0" Name="AuxTempF" DataType="STRING" ValidationType="MAX_STRING_LEN" MinimumValue="-1" MaximumValue="0" MaxStringLength="6" IsSigned="false" ID="0" FunctionID="6" DeviceID="5526146518143168" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="16001189788315313924" ID="7" DeviceID="5526146518143168" Name="Read AuxTempC" ReturnType="STRING">
+            <Parameters>
+              <DeviceParameter ParamID="17692424050663330517" ParentParamID="0" Value="0" DependentParamID="0" Name="AuxTempC" DataType="STRING" ValidationType="MAX_STRING_LEN" MinimumValue="-1" MaximumValue="0" MaxStringLength="6" IsSigned="false" ID="0" FunctionID="7" DeviceID="5526146518143168" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="18238431360281026193" ID="8" DeviceID="5526146518143168" Name="Device Location" ReturnType="STRING">
+            <Parameters>
+              <DeviceParameter ParamID="10627729713894277738" ParentParamID="0" Value="0" DependentParamID="0" Name="New Location" DataType="STRING" ValidationType="MAX_STRING_LEN" MinimumValue="-1" MaximumValue="0" MaxStringLength="32" IsSigned="false" ID="1" FunctionID="8" DeviceID="5526146518143168" PreviousParamID="5386550457390952070" />
+              <DeviceParameter ParamID="4380743652504953647" ParentParamID="0" Value="0" DependentParamID="0" Name="Location" DataType="STRING" ValidationType="MAX_STRING_LEN" MinimumValue="-1" MaximumValue="0" MaxStringLength="32" IsSigned="false" ID="0" FunctionID="8" DeviceID="5526146518143168" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="17275632509941546695" ID="9" DeviceID="5526146518143168" Name="Device Name" ReturnType="STRING">
+            <Parameters>
+              <DeviceParameter ParamID="12905369500405967263" ParentParamID="0" Value="0" DependentParamID="0" Name="Name" DataType="STRING" ValidationType="MAX_STRING_LEN" MinimumValue="-1" MaximumValue="0" MaxStringLength="21" IsSigned="false" ID="0" FunctionID="9" DeviceID="5526146518143168" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="11911240748982228256" ID="10" DeviceID="5526146518143168" Name="Serial Nbr" ReturnType="STRING">
+            <Parameters>
+              <DeviceParameter ParamID="2433519453017633764" ParentParamID="0" Value="0" DependentParamID="0" Name="SerialNbr" DataType="STRING" ValidationType="MAX_STRING_LEN" MinimumValue="-1" MaximumValue="0" MaxStringLength="11" IsSigned="false" ID="0" FunctionID="10" DeviceID="5526146518143168" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="17484659238697758461" ID="11" DeviceID="5526146518143168" Name="Device Version" ReturnType="STRING">
+            <Parameters>
+              <DeviceParameter ParamID="4505609318101946828" ParentParamID="0" Value="0" DependentParamID="0" Name="HW,SW Ver" DataType="STRING" ValidationType="MAX_STRING_LEN" MinimumValue="-1" MaximumValue="0" MaxStringLength="32" IsSigned="false" ID="0" FunctionID="11" DeviceID="5526146518143168" PreviousParamID="0" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="2671300170572870173" ID="12" DeviceID="5526146518143168" Name="Auto Report" ReturnType="VOID">
+            <Parameters>
+              <DeviceParameter ParamID="10279635870156459657" ParentParamID="0" Value="0" DependentParamID="0" Name="Seconds" DataType="DWORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="300" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="12" DeviceID="5526146518143168" PreviousParamID="3576208181931399591" />
+            </Parameters>
+          </DeviceFunction>
+          <DeviceFunction ActionID="5450426122778506847" ID="13" DeviceID="5526146518143168" Name="Red LED" ReturnType="VOID">
+            <Parameters>
+              <DeviceParameter ParamID="1929275950225410580" ParentParamID="0" Value="0" DependentParamID="0" Name="State" DataType="BYTE" ValidationType="ENUMERATED" MinimumValue="-1" MaximumValue="0" MaxStringLength="-1" IsSigned="false" ID="1" FunctionID="13" DeviceID="5526146518143168" PreviousParamID="14653062318738692897">
+                <EnumValueByName>
+                  <Item Key="Off" Value="0" />
+                  <Item Key="On" Value="1" />
+                  <Item Key="Blink" Value="2" />
+                </EnumValueByName>
+              </DeviceParameter>
+            </Parameters>
+          </DeviceFunction>
+        </Catalog>
+      </Device>
+    </NodeList>
+  </NodeManager>
+  <ActionManager>
+    <AnonActions />
+    <UserActions>
+      <Action xsi:type="SequenceAction" ActionID="3701006426739533535" ParentActionID="0" Name="Fade Lights All">
+        <InternalLoopCount ParamID="5477038496813653046" ParentParamID="0" Value="0" DependentParamID="0" Name="Internal Loop Count" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="INTERNAL" ActionID="0" />
+        <InputNumLoops ParamID="8936903912382399837" ParentParamID="0" Value="1" DependentParamID="0" Name="Number of Loops" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="CONSTANT" ActionID="0" />
+        <ActionItems>
+          <ActionItem ActionID="15693271923375263497">
+            <ActionParameters>
+              <ActionParameter ParamID="15264545729941430485" ParentParamID="3698979638640143847" Value="0" DependentParamID="5329317507124047749" Name="Red" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="1" ParameterType="DEPENDENT" ActionID="3701006426739533535" />
+              <ActionParameter ParamID="6584471520763957768" ParentParamID="10455205916246326878" Value="0" DependentParamID="944755526120299225" Name="Green" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="2" ParameterType="DEPENDENT" ActionID="3701006426739533535" />
+              <ActionParameter ParamID="15048905588247943700" ParentParamID="230892758929872262" Value="0" DependentParamID="13574593347623727555" Name="Blue" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="3" ParameterType="DEPENDENT" ActionID="3701006426739533535" />
+              <ActionParameter ParamID="9504666305194629633" ParentParamID="6609383070288708981" Value="1000" DependentParamID="11242203696823876384" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="4" ParameterType="DEPENDENT" ActionID="3701006426739533535" />
+            </ActionParameters>
+          </ActionItem>
+          <ActionItem ActionID="7883187356455191794">
+            <ActionParameters>
+              <ActionParameter ParamID="5329317507124047749" ParentParamID="1546642395363984897" Value="0" DependentParamID="0" Name="Red" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="1" ParameterType="INPUT" ActionID="3701006426739533535" />
+              <ActionParameter ParamID="944755526120299225" ParentParamID="8639283577755305583" Value="0" DependentParamID="0" Name="Green" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="2" ParameterType="INPUT" ActionID="3701006426739533535" />
+              <ActionParameter ParamID="13574593347623727555" ParentParamID="8084565514103614342" Value="0" DependentParamID="0" Name="Blue" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="3" ParameterType="INPUT" ActionID="3701006426739533535" />
+              <ActionParameter ParamID="11242203696823876384" ParentParamID="2384611028672769152" Value="1000" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="4" ParameterType="CONSTANT" ActionID="3701006426739533535" />
+            </ActionParameters>
+          </ActionItem>
+          <ActionItem ActionID="7059452564126880578">
+            <ActionParameters>
+              <ActionParameter ParamID="12405710769964696416" ParentParamID="15766232482127271980" Value="0" DependentParamID="5329317507124047749" Name="Red" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="1" ParameterType="DEPENDENT" ActionID="3701006426739533535" />
+              <ActionParameter ParamID="16872671530657344935" ParentParamID="10029045942190295646" Value="0" DependentParamID="944755526120299225" Name="Green" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="2" ParameterType="DEPENDENT" ActionID="3701006426739533535" />
+              <ActionParameter ParamID="16267441403455163624" ParentParamID="17833867399563241145" Value="0" DependentParamID="13574593347623727555" Name="Blue" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="3" ParameterType="DEPENDENT" ActionID="3701006426739533535" />
+              <ActionParameter ParamID="9626203156220979660" ParentParamID="258198017655625057" Value="1000" DependentParamID="11242203696823876384" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="4" ParameterType="DEPENDENT" ActionID="3701006426739533535" />
+            </ActionParameters>
+          </ActionItem>
+        </ActionItems>
+      </Action>
+      <Action xsi:type="SequenceAction" ActionID="2541068710607790461" ParentActionID="0" Name="Lights On">
+        <InternalLoopCount ParamID="3427904835516775512" ParentParamID="0" Value="0" DependentParamID="0" Name="Internal Loop Count" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="INTERNAL" ActionID="0" />
+        <InputNumLoops ParamID="17318677690820940554" ParentParamID="0" Value="1" DependentParamID="0" Name="Number of Loops" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="CONSTANT" ActionID="0" />
+        <ActionItems>
+          <ActionItem ActionID="17528003418184486584">
+            <ActionParameters>
+              <ActionParameter ParamID="9880350570738242149" ParentParamID="1269125611263458729" Value="100" DependentParamID="0" Name="Percentage" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="100" MaxStringLength="-1" IsSigned="false" ID="1" ParameterType="CONSTANT" ActionID="2541068710607790461" />
+              <ActionParameter ParamID="7415412566973581386" ParentParamID="10482291732671263672" Value="1000" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="2" ParameterType="CONSTANT" ActionID="2541068710607790461" />
+            </ActionParameters>
+          </ActionItem>
+          <ActionItem ActionID="12039557043414831362">
+            <ActionParameters>
+              <ActionParameter ParamID="16256074259518523436" ParentParamID="4866760629341174272" Value="100" DependentParamID="9880350570738242149" Name="Percentage" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="100" MaxStringLength="-1" IsSigned="false" ID="1" ParameterType="DEPENDENT" ActionID="2541068710607790461" />
+              <ActionParameter ParamID="5339984337008623198" ParentParamID="15512791700193699052" Value="1000" DependentParamID="7415412566973581386" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="2" ParameterType="DEPENDENT" ActionID="2541068710607790461" />
+            </ActionParameters>
+          </ActionItem>
+          <ActionItem ActionID="1504382389553552348">
+            <ActionParameters>
+              <ActionParameter ParamID="2336861145819757625" ParentParamID="1572810494350839934" Value="100" DependentParamID="9880350570738242149" Name="Percentage" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="100" MaxStringLength="-1" IsSigned="false" ID="1" ParameterType="DEPENDENT" ActionID="2541068710607790461" />
+              <ActionParameter ParamID="11012014801920647897" ParentParamID="11655702588922975777" Value="1000" DependentParamID="7415412566973581386" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="2" ParameterType="DEPENDENT" ActionID="2541068710607790461" />
+            </ActionParameters>
+          </ActionItem>
+        </ActionItems>
+      </Action>
+      <Action xsi:type="SequenceAction" ActionID="15496112094878712681" ParentActionID="0" Name="Lights Red">
+        <InternalLoopCount ParamID="8896250046116227083" ParentParamID="0" Value="0" DependentParamID="0" Name="Internal Loop Count" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="INTERNAL" ActionID="0" />
+        <InputNumLoops ParamID="6688072679214029474" ParentParamID="0" Value="1" DependentParamID="0" Name="Number of Loops" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="CONSTANT" ActionID="0" />
+        <ActionItems>
+          <ActionItem ActionID="3701006426739533535">
+            <ActionParameters>
+              <ActionParameter ParamID="7051499730061768072" ParentParamID="5329317507124047749" Value="4095" DependentParamID="0" Name="Red" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="1" ParameterType="CONSTANT" ActionID="15496112094878712681" />
+              <ActionParameter ParamID="187946061847115401" ParentParamID="944755526120299225" Value="0" DependentParamID="0" Name="Green" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="2" ParameterType="CONSTANT" ActionID="15496112094878712681" />
+              <ActionParameter ParamID="3121849094456370321" ParentParamID="13574593347623727555" Value="0" DependentParamID="0" Name="Blue" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="3" ParameterType="CONSTANT" ActionID="15496112094878712681" />
+              <ActionParameter ParamID="10159495697250337082" ParentParamID="11242203696823876384" Value="1000" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="4" ParameterType="CONSTANT" ActionID="15496112094878712681" />
+            </ActionParameters>
+          </ActionItem>
+        </ActionItems>
+      </Action>
+      <Action xsi:type="SequenceAction" ActionID="3998329751972289127" ParentActionID="0" Name="Lights Off">
+        <InternalLoopCount ParamID="15786194769388719289" ParentParamID="0" Value="0" DependentParamID="0" Name="Internal Loop Count" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="INTERNAL" ActionID="0" />
+        <InputNumLoops ParamID="18055269378335908460" ParentParamID="0" Value="1" DependentParamID="0" Name="Number of Loops" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="CONSTANT" ActionID="0" />
+        <ActionItems>
+          <ActionItem ActionID="3701006426739533535">
+            <ActionParameters>
+              <ActionParameter ParamID="15331193607105730969" ParentParamID="5329317507124047749" Value="0" DependentParamID="0" Name="Red" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="1" ParameterType="CONSTANT" ActionID="3998329751972289127" />
+              <ActionParameter ParamID="5661421927426880683" ParentParamID="944755526120299225" Value="0" DependentParamID="0" Name="Green" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="2" ParameterType="CONSTANT" ActionID="3998329751972289127" />
+              <ActionParameter ParamID="332825083997112384" ParentParamID="13574593347623727555" Value="0" DependentParamID="0" Name="Blue" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="3" ParameterType="CONSTANT" ActionID="3998329751972289127" />
+              <ActionParameter ParamID="3801636043662686159" ParentParamID="11242203696823876384" Value="1000" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="4" ParameterType="CONSTANT" ActionID="3998329751972289127" />
+            </ActionParameters>
+          </ActionItem>
+        </ActionItems>
+      </Action>
+      <Action xsi:type="SequenceAction" ActionID="5380307666462813489" ParentActionID="0" Name="Lights Green">
+        <InternalLoopCount ParamID="1662128544886463212" ParentParamID="0" Value="0" DependentParamID="0" Name="Internal Loop Count" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="INTERNAL" ActionID="0" />
+        <InputNumLoops ParamID="9150668670633693787" ParentParamID="0" Value="1" DependentParamID="0" Name="Number of Loops" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="CONSTANT" ActionID="0" />
+        <ActionItems>
+          <ActionItem ActionID="3701006426739533535">
+            <ActionParameters>
+              <ActionParameter ParamID="13970015678953286882" ParentParamID="5329317507124047749" Value="0" DependentParamID="0" Name="Red" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="1" ParameterType="CONSTANT" ActionID="5380307666462813489" />
+              <ActionParameter ParamID="16190601069982369721" ParentParamID="944755526120299225" Value="4095" DependentParamID="0" Name="Green" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="2" ParameterType="CONSTANT" ActionID="5380307666462813489" />
+              <ActionParameter ParamID="2959255327362525370" ParentParamID="13574593347623727555" Value="0" DependentParamID="0" Name="Blue" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="3" ParameterType="CONSTANT" ActionID="5380307666462813489" />
+              <ActionParameter ParamID="8998345289971048239" ParentParamID="11242203696823876384" Value="1000" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="4" ParameterType="CONSTANT" ActionID="5380307666462813489" />
+            </ActionParameters>
+          </ActionItem>
+        </ActionItems>
+      </Action>
+      <Action xsi:type="SequenceAction" ActionID="8362136722370679984" ParentActionID="0" Name="Lights Blue">
+        <InternalLoopCount ParamID="14498156704576191931" ParentParamID="0" Value="0" DependentParamID="0" Name="Internal Loop Count" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="INTERNAL" ActionID="0" />
+        <InputNumLoops ParamID="9183791355648248097" ParentParamID="0" Value="1" DependentParamID="0" Name="Number of Loops" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="CONSTANT" ActionID="0" />
+        <ActionItems>
+          <ActionItem ActionID="3701006426739533535">
+            <ActionParameters>
+              <ActionParameter ParamID="3270791385819872475" ParentParamID="5329317507124047749" Value="0" DependentParamID="0" Name="Red" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="1" ParameterType="CONSTANT" ActionID="8362136722370679984" />
+              <ActionParameter ParamID="8274322435945586407" ParentParamID="944755526120299225" Value="0" DependentParamID="0" Name="Green" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="2" ParameterType="CONSTANT" ActionID="8362136722370679984" />
+              <ActionParameter ParamID="7094224037192182555" ParentParamID="13574593347623727555" Value="4095" DependentParamID="0" Name="Blue" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="3" ParameterType="CONSTANT" ActionID="8362136722370679984" />
+              <ActionParameter ParamID="5685895494900727404" ParentParamID="11242203696823876384" Value="1000" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="4" ParameterType="CONSTANT" ActionID="8362136722370679984" />
+            </ActionParameters>
+          </ActionItem>
+        </ActionItems>
+      </Action>
+      <Action xsi:type="SequenceAction" ActionID="14495571335334614182" ParentActionID="0" Name="Lights Yellow">
+        <InternalLoopCount ParamID="4237042770975307743" ParentParamID="0" Value="0" DependentParamID="0" Name="Internal Loop Count" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="INTERNAL" ActionID="0" />
+        <InputNumLoops ParamID="5253962696105618515" ParentParamID="0" Value="1" DependentParamID="0" Name="Number of Loops" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="CONSTANT" ActionID="0" />
+        <ActionItems>
+          <ActionItem ActionID="3701006426739533535">
+            <ActionParameters>
+              <ActionParameter ParamID="8003630959828197040" ParentParamID="5329317507124047749" Value="4095" DependentParamID="0" Name="Red" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="1" ParameterType="CONSTANT" ActionID="14495571335334614182" />
+              <ActionParameter ParamID="7766229619950402278" ParentParamID="944755526120299225" Value="4095" DependentParamID="0" Name="Green" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="2" ParameterType="CONSTANT" ActionID="14495571335334614182" />
+              <ActionParameter ParamID="17769174924696577957" ParentParamID="13574593347623727555" Value="0" DependentParamID="0" Name="Blue" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="3" ParameterType="CONSTANT" ActionID="14495571335334614182" />
+              <ActionParameter ParamID="15163930825129424249" ParentParamID="11242203696823876384" Value="1000" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="4" ParameterType="CONSTANT" ActionID="14495571335334614182" />
+            </ActionParameters>
+          </ActionItem>
+        </ActionItems>
+      </Action>
+      <Action xsi:type="SequenceAction" ActionID="2488414429187190693" ParentActionID="0" Name="Lights Aqua">
+        <InternalLoopCount ParamID="16561704517567913124" ParentParamID="0" Value="0" DependentParamID="0" Name="Internal Loop Count" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="INTERNAL" ActionID="0" />
+        <InputNumLoops ParamID="14749494575118215494" ParentParamID="0" Value="1" DependentParamID="0" Name="Number of Loops" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="CONSTANT" ActionID="0" />
+        <ActionItems>
+          <ActionItem ActionID="3701006426739533535">
+            <ActionParameters>
+              <ActionParameter ParamID="7831286678626070344" ParentParamID="5329317507124047749" Value="0" DependentParamID="0" Name="Red" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="1" ParameterType="CONSTANT" ActionID="2488414429187190693" />
+              <ActionParameter ParamID="15652364008307363217" ParentParamID="944755526120299225" Value="4095" DependentParamID="0" Name="Green" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="2" ParameterType="CONSTANT" ActionID="2488414429187190693" />
+              <ActionParameter ParamID="7804911308569201900" ParentParamID="13574593347623727555" Value="4095" DependentParamID="0" Name="Blue" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="3" ParameterType="CONSTANT" ActionID="2488414429187190693" />
+              <ActionParameter ParamID="16796271295949999573" ParentParamID="11242203696823876384" Value="1000" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="4" ParameterType="CONSTANT" ActionID="2488414429187190693" />
+            </ActionParameters>
+          </ActionItem>
+        </ActionItems>
+      </Action>
+      <Action xsi:type="SequenceAction" ActionID="16699932055483593069" ParentActionID="0" Name="Lights Purple">
+        <InternalLoopCount ParamID="12344382014174109617" ParentParamID="0" Value="0" DependentParamID="0" Name="Internal Loop Count" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="INTERNAL" ActionID="0" />
+        <InputNumLoops ParamID="4227995085799642399" ParentParamID="0" Value="1" DependentParamID="0" Name="Number of Loops" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="CONSTANT" ActionID="0" />
+        <ActionItems>
+          <ActionItem ActionID="3701006426739533535">
+            <ActionParameters>
+              <ActionParameter ParamID="7709012946529311989" ParentParamID="5329317507124047749" Value="4095" DependentParamID="0" Name="Red" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="1" ParameterType="CONSTANT" ActionID="16699932055483593069" />
+              <ActionParameter ParamID="14029799544539340520" ParentParamID="944755526120299225" Value="0" DependentParamID="0" Name="Green" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="2" ParameterType="CONSTANT" ActionID="16699932055483593069" />
+              <ActionParameter ParamID="17284597417993390282" ParentParamID="13574593347623727555" Value="4095" DependentParamID="0" Name="Blue" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="3" ParameterType="CONSTANT" ActionID="16699932055483593069" />
+              <ActionParameter ParamID="10534538907938080139" ParentParamID="11242203696823876384" Value="1000" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="4" ParameterType="CONSTANT" ActionID="16699932055483593069" />
+            </ActionParameters>
+          </ActionItem>
+        </ActionItems>
+      </Action>
+      <Action xsi:type="SequenceAction" ActionID="15445817975986902783" ParentActionID="16699932055483593069" Name="Lights White">
+        <InternalLoopCount ParamID="11311816744949459091" ParentParamID="0" Value="0" DependentParamID="0" Name="Internal Loop Count" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="INTERNAL" ActionID="0" />
+        <InputNumLoops ParamID="6752821057647047680" ParentParamID="0" Value="1" DependentParamID="0" Name="Number of Loops" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="CONSTANT" ActionID="0" />
+        <ActionItems>
+          <ActionItem ActionID="3701006426739533535">
+            <ActionParameters>
+              <ActionParameter ParamID="12959732029324935587" ParentParamID="5329317507124047749" Value="4095" DependentParamID="0" Name="Red" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="1" ParameterType="CONSTANT" ActionID="0" />
+              <ActionParameter ParamID="7533285402060071186" ParentParamID="944755526120299225" Value="4000" DependentParamID="0" Name="Green" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="2" ParameterType="CONSTANT" ActionID="0" />
+              <ActionParameter ParamID="9622553430884876102" ParentParamID="13574593347623727555" Value="4095" DependentParamID="0" Name="Blue" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" ID="3" ParameterType="CONSTANT" ActionID="0" />
+              <ActionParameter ParamID="2911935878696437535" ParentParamID="11242203696823876384" Value="1000" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="4" ParameterType="CONSTANT" ActionID="0" />
+            </ActionParameters>
+          </ActionItem>
+        </ActionItems>
+      </Action>
+      <Action xsi:type="SequenceAction" ActionID="8154878178064840164" ParentActionID="0" Name="Fade Natural">
+        <InternalLoopCount ParamID="5251029528541823094" ParentParamID="0" Value="0" DependentParamID="0" Name="Internal Loop Count" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="INTERNAL" ActionID="0" />
+        <InputNumLoops ParamID="13677238123739546413" ParentParamID="0" Value="1" DependentParamID="0" Name="Number of Loops" DataType="WORD" ValidationType="UNSIGNED_FULL" MinimumValue="0" MaximumValue="0" MaxStringLength="0" IsSigned="false" ID="0" ParameterType="CONSTANT" ActionID="0" />
+        <ActionItems>
+          <ActionItem ActionID="12039557043414831362">
+            <ActionParameters>
+              <ActionParameter ParamID="10029391491057991188" ParentParamID="4866760629341174272" Value="100" DependentParamID="0" Name="Percentage" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="100" MaxStringLength="-1" IsSigned="false" ID="1" ParameterType="INPUT" ActionID="8154878178064840164" />
+              <ActionParameter ParamID="13348275225280402831" ParentParamID="15512791700193699052" Value="1000" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="2" ParameterType="CONSTANT" ActionID="8154878178064840164" />
+            </ActionParameters>
+          </ActionItem>
+          <ActionItem ActionID="17528003418184486584">
+            <ActionParameters>
+              <ActionParameter ParamID="10135759689188715758" ParentParamID="1269125611263458729" Value="100" DependentParamID="10029391491057991188" Name="Percentage" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="100" MaxStringLength="-1" IsSigned="false" ID="1" ParameterType="DEPENDENT" ActionID="8154878178064840164" />
+              <ActionParameter ParamID="10797269327378720800" ParentParamID="10482291732671263672" Value="1000" DependentParamID="13348275225280402831" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="2" ParameterType="DEPENDENT" ActionID="8154878178064840164" />
+            </ActionParameters>
+          </ActionItem>
+          <ActionItem ActionID="1504382389553552348">
+            <ActionParameters>
+              <ActionParameter ParamID="16646950308723451366" ParentParamID="1572810494350839934" Value="100" DependentParamID="10029391491057991188" Name="Percentage" DataType="BYTE" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="100" MaxStringLength="-1" IsSigned="false" ID="1" ParameterType="DEPENDENT" ActionID="8154878178064840164" />
+              <ActionParameter ParamID="10714204707115124304" ParentParamID="11655702588922975777" Value="1000" DependentParamID="13348275225280402831" Name="FadeTime" DataType="WORD" ValidationType="UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" ID="2" ParameterType="DEPENDENT" ActionID="8154878178064840164" />
+            </ActionParameters>
+          </ActionItem>
+        </ActionItems>
+      </Action>
+    </UserActions>
+  </ActionManager>
+  <EventScheduler>
+    <SchedulerEventSet>
+      <Event Name="Lights" TriggerMode="AllTriggersFired" EventID="5458132740935517895" IsEnabled="true">
+        <Triggers>
+          <Trigger xsi:type="MessageTrigger" TriggerID="123861851760825277" Name="ButtonPress" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518102909" FunctionID="7" />
+        </Triggers>
+        <Actions>
+          <EventAction ActionID="15372027212378218801" ParentActionID="2541068710607790461" Name="Lights On">
+            <Conditionals ConditionalValue="1" TriggerParameterID="1063822046282090105" ConditionalType="EqualTo" />
+          </EventAction>
+          <EventAction ActionID="12474978844079890054" ParentActionID="3998329751972289127" Name="Lights Off">
+            <Conditionals ConditionalValue="3" TriggerParameterID="1063822046282090105" ConditionalType="EqualTo" />
+          </EventAction>
+          <EventAction ActionID="8811387760843489226" ParentActionID="15496112094878712681" Name="Lights Red">
+            <Conditionals ConditionalValue="2" TriggerParameterID="1063822046282090105" ConditionalType="EqualTo" />
+          </EventAction>
+          <EventAction ActionID="4835865860526682906" ParentActionID="5380307666462813489" Name="Lights Green">
+            <Conditionals ConditionalValue="4" TriggerParameterID="1063822046282090105" ConditionalType="EqualTo" />
+          </EventAction>
+          <EventAction ActionID="10885942243797550218" ParentActionID="8362136722370679984" Name="Lights Blue">
+            <Conditionals ConditionalValue="5" TriggerParameterID="1063822046282090105" ConditionalType="EqualTo" />
+          </EventAction>
+        </Actions>
+      </Event>
+    </SchedulerEventSet>
+    <SchedulerDeviceTriggers>
+      <Trigger xsi:type="MessageTrigger" TriggerID="7411239540947607104" Name="GetRedValue" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518102914" FunctionID="4" />
+      <Trigger xsi:type="MessageTrigger" TriggerID="6793031173398155043" Name="GetGreenValue" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518102914" FunctionID="5" />
+      <Trigger xsi:type="MessageTrigger" TriggerID="17503630284471009595" Name="GetBlueValue" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518102914" FunctionID="6" />
+      <Trigger xsi:type="StatusTrigger" TriggerID="4925057723835618163" Name="Bookshelf LEDs.Status" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518102914" />
+      <Trigger xsi:type="MessageTrigger" TriggerID="10903024064377820866" Name="GetRedValue" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518102909" FunctionID="4" />
+      <Trigger xsi:type="MessageTrigger" TriggerID="4646749685067434757" Name="GetGreenValue" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518102909" FunctionID="5" />
+      <Trigger xsi:type="MessageTrigger" TriggerID="15951603227126680511" Name="GetBlueValue" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518102909" FunctionID="6" />
+      <Trigger xsi:type="MessageTrigger" TriggerID="15168118588661010676" Name="ButtonPress" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518102909" FunctionID="7" />
+      <Trigger xsi:type="StatusTrigger" TriggerID="16843348163836463605" Name="Hutch LEDs.Status" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518102909" />
+      <Trigger xsi:type="MessageTrigger" TriggerID="16193492667200639666" Name="GetRedValue" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518188130" FunctionID="4" />
+      <Trigger xsi:type="MessageTrigger" TriggerID="5162719965645587351" Name="GetGreenValue" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518188130" FunctionID="5" />
+      <Trigger xsi:type="MessageTrigger" TriggerID="655355307458423095" Name="GetBlueValue" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518188130" FunctionID="6" />
+      <Trigger xsi:type="StatusTrigger" TriggerID="2906570940619737292" Name="Media LEDs.Status" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518188130" />
+      <Trigger xsi:type="StatusTrigger" TriggerID="2095485645232075660" Name="Unknown.Status" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518105227" />
+      <Trigger xsi:type="MessageTrigger" TriggerID="5358690766164869846" Name="Read TempF" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518143168" FunctionID="1" />
+      <Trigger xsi:type="MessageTrigger" TriggerID="7474763569298303907" Name="Read TempC" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518143168" FunctionID="2" />
+      <Trigger xsi:type="MessageTrigger" TriggerID="6990373571372079866" Name="Read RelH" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518143168" FunctionID="3" />
+      <Trigger xsi:type="MessageTrigger" TriggerID="10173660895021889517" Name="Read DewPtF" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518143168" FunctionID="4" />
+      <Trigger xsi:type="MessageTrigger" TriggerID="16658215645723794644" Name="Read DewPtC" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518143168" FunctionID="5" />
+      <Trigger xsi:type="MessageTrigger" TriggerID="15729478280766280298" Name="Read AuxTempF" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518143168" FunctionID="6" />
+      <Trigger xsi:type="MessageTrigger" TriggerID="748183306143634487" Name="Read AuxTempC" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518143168" FunctionID="7" />
+      <Trigger xsi:type="MessageTrigger" TriggerID="9843985696758238016" Name="Device Location" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518143168" FunctionID="8" />
+      <Trigger xsi:type="MessageTrigger" TriggerID="2056402824562769979" Name="Device Name" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518143168" FunctionID="9" />
+      <Trigger xsi:type="MessageTrigger" TriggerID="10968955051746591020" Name="Serial Nbr" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518143168" FunctionID="10" />
+      <Trigger xsi:type="MessageTrigger" TriggerID="13892887458179789996" Name="Device Version" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518143168" FunctionID="11" />
+      <Trigger xsi:type="StatusTrigger" TriggerID="10237323590301789497" Name="PropSense03.Status" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="5526146518143168" />
+      <Trigger xsi:type="StatusTrigger" TriggerID="7521021452212486710" Name="NodeList.Status" CounterValue="1" MatchOperation="6" MatchValue="0" DeviceID="0" />
+      <Trigger xsi:type="DateTimeTrigger" TriggerID="12793172376280921099" Name="Every Minute" CounterValue="0" MatchOperation="5" MatchValue="634118872034709140" DateTimeType="1" NbrPriorFirings="0" RepeatIntervalInTicks="600000000" SkipInterval="1" SourceWasCount="false" StartTimeInTicks="634118871434709140" EndTimeInTicks="0" ValueDisplayFormat="0">
+        <SchedulePoints />
+      </Trigger>
+    </SchedulerDeviceTriggers>
+    <SchedulerUserInterfaceTriggerIDs />
+  </EventScheduler>
+  <Gui>
+    <GuiPanels>
+      <GuiPanel ForegroundColor="#FF000000" BackgroundColor="#FFFFFFFF" Title="Panel">
+        <GuiPanelItems>
+          <GuiPanelItem>
+            <GuiPanelItemSetup PositionTop="9" PositionLeft="9" PositionZIndex="0" Width="0" Height="0" LabelSizeSync="True">
+              <GuiItemControl ClassName="SyNet.Gui.Controls.SnGroupBox.SnGroupBox" IsControlEnabled="true">
+                <SnGroupBox Header="Lights On" />
+              </GuiItemControl>
+              <GuiAction ActionID="11988255672894018839" ParentActionID="2541068710607790461" Name="Lights On" />
+              <GuiPanelChildren>
+                <GuiPanelItemSetup PositionTop="0" PositionLeft="0" PositionZIndex="0" Width="0" Height="0">
+                  <GuiItemControl ClassName="SyNet.Gui.Controls.SnButton.SnButton" IsControlEnabled="true">
+                    <SnButton Content="Lights On" />
+                  </GuiItemControl>
+                </GuiPanelItemSetup>
+              </GuiPanelChildren>
+            </GuiPanelItemSetup>
+          </GuiPanelItem>
+          <GuiPanelItem>
+            <GuiPanelItemSetup PositionTop="9" PositionLeft="260" PositionZIndex="0" Width="0" Height="0" LabelSizeSync="True">
+              <GuiItemControl ClassName="SyNet.Gui.Controls.SnGroupBox.SnGroupBox" IsControlEnabled="true">
+                <SnGroupBox Header="Lights Off" />
+              </GuiItemControl>
+              <GuiAction ActionID="1483656678024523719" ParentActionID="3998329751972289127" Name="Lights Off" />
+              <GuiPanelChildren>
+                <GuiPanelItemSetup PositionTop="0" PositionLeft="3" PositionZIndex="0" Width="0" Height="0">
+                  <GuiItemControl ClassName="SyNet.Gui.Controls.SnButton.SnButton" IsControlEnabled="true">
+                    <SnButton Content="Lights Off" />
+                  </GuiItemControl>
+                </GuiPanelItemSetup>
+              </GuiPanelChildren>
+            </GuiPanelItemSetup>
+          </GuiPanelItem>
+        </GuiPanelItems>
+      </GuiPanel>
+    </GuiPanels>
+  </Gui>
+</Controller>

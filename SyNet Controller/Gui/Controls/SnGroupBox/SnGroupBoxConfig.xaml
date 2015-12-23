@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="SyNet.Gui.Controls.SnGroupBox.SnGroupBoxConfig"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    
+    <!-- Button text -->
+    <Label Grid.Column="0" Grid.Row="0">Text:</Label>
+    <TextBox Grid.Column="1" Grid.Row="0" x:Name="x_text"
+             Text="{Binding Path=Header, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+  </Grid>
+</UserControl>

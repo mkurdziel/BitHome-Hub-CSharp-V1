@@ -1,0 +1,621 @@
+﻿<UserControl x:Class="SyNet.GuiControls.DateRepeat.DateRepeatControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:GuiControls="clr-namespace:SyNet.GuiControls"
+             Background="White"
+             BorderBrush="{x:Static SystemColors.ControlDarkDarkBrush}"
+             BorderThickness="1"
+    >
+  <UserControl.Resources>
+
+    <Style x:Key="ButtonFocusVisual">
+      <Setter Property="Control.Template">
+        <Setter.Value>
+          <ControlTemplate>
+            <Border>
+              <Rectangle 
+            Margin="2"
+            StrokeThickness="1"
+            Stroke="#60000000"
+            StrokeDashArray="1 2"/>
+            </Border>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!-- Fill Brushes -->
+
+    <LinearGradientBrush x:Key="NormalBrush" StartPoint="0,0" EndPoint="0,1">
+      <GradientBrush.GradientStops>
+        <GradientStopCollection>
+          <GradientStop Color="#FFF" Offset="0.0"/>
+          <GradientStop Color="#CCC" Offset="1.0"/>
+        </GradientStopCollection>
+      </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="HorizontalNormalBrush" StartPoint="0,0" EndPoint="1,0">
+      <GradientBrush.GradientStops>
+        <GradientStopCollection>
+          <GradientStop Color="#FFF" Offset="0.0"/>
+          <GradientStop Color="#CCC" Offset="1.0"/>
+        </GradientStopCollection>
+      </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="LightBrush" StartPoint="0,0" EndPoint="0,1">
+      <GradientBrush.GradientStops>
+        <GradientStopCollection>
+          <GradientStop Color="#FFF" Offset="0.0"/>
+          <GradientStop Color="#EEE" Offset="1.0"/>
+        </GradientStopCollection>
+      </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="HorizontalLightBrush" StartPoint="0,0" EndPoint="1,0">
+      <GradientBrush.GradientStops>
+        <GradientStopCollection>
+          <GradientStop Color="#FFF" Offset="0.0"/>
+          <GradientStop Color="#EEE" Offset="1.0"/>
+        </GradientStopCollection>
+      </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="DarkBrush" StartPoint="0,0" EndPoint="0,1">
+      <GradientBrush.GradientStops>
+        <GradientStopCollection>
+          <GradientStop Color="#FFF" Offset="0.0"/>
+          <GradientStop Color="#AAA" Offset="1.0"/>
+        </GradientStopCollection>
+      </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="PressedBrush" StartPoint="0,0" EndPoint="0,1">
+      <GradientBrush.GradientStops>
+        <GradientStopCollection>
+          <GradientStop Color="#BBB" Offset="0.0"/>
+          <GradientStop Color="#EEE" Offset="0.1"/>
+          <GradientStop Color="#EEE" Offset="0.9"/>
+          <GradientStop Color="#FFF" Offset="1.0"/>
+        </GradientStopCollection>
+      </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
+
+    <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="#EEE" />
+
+    <SolidColorBrush x:Key="WindowBackgroundBrush" Color="#FFF" />
+
+    <SolidColorBrush x:Key="SelectedBackgroundBrush" Color="#DDD" />
+
+    <!-- Border Brushes -->
+
+    <LinearGradientBrush x:Key="NormalBorderBrush" StartPoint="0,0" EndPoint="0,1">
+      <GradientBrush.GradientStops>
+        <GradientStopCollection>
+          <GradientStop Color="#CCC" Offset="0.0"/>
+          <GradientStop Color="#444" Offset="1.0"/>
+        </GradientStopCollection>
+      </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="HorizontalNormalBorderBrush" StartPoint="0,0" EndPoint="1,0">
+      <GradientBrush.GradientStops>
+        <GradientStopCollection>
+          <GradientStop Color="#CCC" Offset="0.0"/>
+          <GradientStop Color="#444" Offset="1.0"/>
+        </GradientStopCollection>
+      </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="DefaultedBorderBrush" StartPoint="0,0" EndPoint="0,1">
+      <GradientBrush.GradientStops>
+        <GradientStopCollection>
+          <GradientStop Color="#777" Offset="0.0"/>
+          <GradientStop Color="#000" Offset="1.0"/>
+        </GradientStopCollection>
+      </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="PressedBorderBrush" StartPoint="0,0" EndPoint="0,1">
+      <GradientBrush.GradientStops>
+        <GradientStopCollection>
+          <GradientStop Color="#444" Offset="0.0"/>
+          <GradientStop Color="#888" Offset="1.0"/>
+        </GradientStopCollection>
+      </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="DisabledBorderBrush" Color="#AAA" />
+
+    <SolidColorBrush x:Key="SolidBorderBrush" Color="#888" />
+
+    <SolidColorBrush x:Key="LightBorderBrush" Color="#AAA" />
+
+    <!-- Miscellaneous Brushes -->
+    <SolidColorBrush x:Key="GlyphBrush" Color="#444" />
+
+    <SolidColorBrush x:Key="LightColorBrush" Color="#DDD" />
+
+    <Style x:Key="SquareButtonStyle" TargetType="Button">
+      <Setter Property="SnapsToDevicePixels" Value="true"/>
+      <Setter Property="OverridesDefaultStyle" Value="true"/>
+      <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+      <Setter Property="Height" Value="25"/>
+      <Setter Property="Width" Value="25"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Border 
+          x:Name="Border"  
+          CornerRadius="0" 
+          BorderThickness="1"
+          Background="{StaticResource NormalBrush}"
+          BorderBrush="{StaticResource NormalBorderBrush}">
+              <ContentPresenter 
+            Margin="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            RecognizesAccessKey="True"/>
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsKeyboardFocused" Value="true">
+                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DefaultedBorderBrush}" />
+              </Trigger>
+              <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource DarkBrush}" />
+              </Trigger>
+              <Trigger Property="IsPressed" Value="true">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource PressedBrush}" />
+                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource PressedBorderBrush}" />
+              </Trigger>
+              <Trigger Property="IsEnabled" Value="false">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource DisabledBackgroundBrush}" />
+                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DisabledBorderBrush}" />
+                <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style x:Key="SquareToggleButtonStyle" TargetType="ToggleButton">
+      <Setter Property="SnapsToDevicePixels" Value="true"/>
+      <Setter Property="OverridesDefaultStyle" Value="true"/>
+      <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+      <Setter Property="Height" Value="25"/>
+      <Setter Property="Width" Value="25"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="ToggleButton">
+            <Border 
+          x:Name="Border"  
+          CornerRadius="0" 
+          BorderThickness="1"
+          Background="{StaticResource NormalBrush}"
+          BorderBrush="{StaticResource NormalBorderBrush}">
+              <ContentPresenter 
+            Margin="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            RecognizesAccessKey="True"/>
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsKeyboardFocused" Value="true">
+                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DefaultedBorderBrush}" />
+              </Trigger>
+              <Trigger Property="IsChecked" Value="true">
+                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource SelectedBorderBrush}" />
+                <Setter TargetName="Border" Property="Background" Value="{x:Static SystemColors.HighlightBrush}" />
+              </Trigger>
+              <!--<Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource DarkBrush}" />
+              </Trigger>-->
+              <Trigger Property="IsPressed" Value="true">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource PressedBrush}" />
+                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource PressedBorderBrush}" />
+              </Trigger>
+              <Trigger Property="IsEnabled" Value="false">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource DisabledBackgroundBrush}" />
+                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DisabledBorderBrush}" />
+                <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style x:Key="ListBoxItemDeletable" TargetType="ListBoxItem">
+      <Setter Property="SnapsToDevicePixels" Value="true"/>
+      <Setter Property="OverridesDefaultStyle" Value="true"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="ListBoxItem">
+            <Border 
+          Name="Border"
+          Padding="2"
+          SnapsToDevicePixels="true">
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*"/>
+                  <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <ContentPresenter />
+                <Image Grid.Column="1" Source="pack://application:,,,/Resources/DeleteTiny.png"
+                       x:Name="x_deleteButton"
+                       SnapsToDevicePixels="True"
+                       MouseDown="ListBoxDelete_MouseDown"
+                       Visibility="Hidden"/>
+              </Grid>
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsSelected" Value="true">
+                <Setter TargetName="Border" Property="Background"
+                    Value="{StaticResource SelectedBackgroundBrush}"/>
+                <Setter TargetName="x_deleteButton" Property="Visibility" Value="Visible"/>
+              </Trigger>
+              <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Foreground"
+                    Value="{StaticResource DisabledForegroundBrush}"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </UserControl.Resources>
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <!-- Frequency box -->
+    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="8" >
+      <Label Content="Frequency:"/>
+      <ComboBox Width="100" SelectionChanged="Frequency_SelectionChanged"
+                x:Name="x_frequencyComboBox">
+        <ComboBoxItem Content="None"/>
+        <ComboBoxItem Content="Hourly"/>
+        <ComboBoxItem Content="Daily"/>
+        <ComboBoxItem Content="Weekly"/>
+        <ComboBoxItem Content="Monthly"/>
+        <ComboBoxItem Content="Yearly"/>
+      </ComboBox>
+    </StackPanel>
+
+    <!-- Hourly -->
+    <Grid Grid.Row="1" x:Name="x_hourlyPanel" Margin="8"
+          Visibility="Collapsed">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <!-- Minutes -->
+      <StackPanel Grid.Row="0" Orientation="Horizontal">
+        <RadioButton GroupName="RadioHourly" VerticalAlignment="Center"
+                     x:Name="x_hourlyMinutesRadioButton"
+                     Checked="RadioHourlyMinutes_Checked"
+                     Unchecked="RadioHourlyMinutes_Checked"
+                     IsChecked="True"/>
+        <Label Content="Every "/>
+        <GuiControls:NumericTextBox Width="40" VerticalAlignment="Center"
+                 x:Name="x_hourlyMinutesTextBox"
+                 Text="1"/>
+        <Label Content=" minute(s)"/>
+      </StackPanel>
+      <!-- Hours -->
+      <StackPanel Grid.Row="1" Orientation="Horizontal">
+        <RadioButton GroupName="RadioHourly" VerticalAlignment="Center"
+                     x:Name="x_hourlyHoursRadioButton"
+                     Checked="RadioHourlyHours_Checked"
+                     Unchecked="RadioHourlyHours_Checked" />
+        <Label Content="Every "/>
+        <GuiControls:NumericTextBox Width="40" VerticalAlignment="Center" 
+                 x:Name="x_hourlyHoursTextBox"
+                 Text="1"
+                 IsEnabled="False"/>
+        <Label Content=" hour(s)"/>
+      </StackPanel>
+      <!-- Times -->
+      <StackPanel Grid.Row="2" Orientation="Horizontal">
+        <RadioButton GroupName="RadioHourly" VerticalAlignment="Center"
+                     x:Name="x_hourlyTimesRadioButton"
+                     Checked="RadioHourlyTimes_Checked"
+                     Unchecked="RadioHourlyTimes_Checked" />
+        <Label Content="At: "/>
+        <GuiControls:DateTimeEntryBox  VerticalAlignment="Center"
+                                       x:Name="x_hourlyTimeTextBox"
+                                       ControlType="Time"
+                                       IsEnabled="False"
+                                       />
+        <Button Style="{StaticResource SquareButtonStyle}" 
+                x:Name="x_hourlyTimesAddButton"
+                IsEnabled="False"
+                Click="HourlyTimeAdd_Click"
+                Height="22" Width="22">
+          <Grid>
+            <Image VerticalAlignment="Center"
+                   HorizontalAlignment="Center"  
+                   Height="12" Width="12" 
+                   Source="pack://application:,,,/Resources/PlusSmall.png"/>
+          </Grid>
+        </Button>
+      </StackPanel>
+
+
+      <Grid Grid.Row="3" Margin="8,0,0,0">
+        <ListBox Height="80"
+                 ScrollViewer.CanContentScroll="True"
+                 ScrollViewer.VerticalScrollBarVisibility="Visible"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 x:Name="x_hourlyTimeListbox"
+                 ItemContainerStyle="{StaticResource ListBoxItemDeletable}"
+                 IsEnabled="False"></ListBox>
+      </Grid>
+    </Grid>
+
+
+    <!-- Daily -->
+    <StackPanel x:Name="x_dailyPanel" Grid.Row="1" Orientation="Horizontal"
+                Margin="8" Visibility="Collapsed">
+      <Label Content="Every "/>
+      <GuiControls:NumericTextBox Width="40" VerticalAlignment="Center"
+                                  Text="1"
+                                  x:Name="x_dailyTextBox"/>
+      <Label Content=" day(s)"/>
+    </StackPanel>
+
+    <!-- Weekly -->
+    <Grid Grid.Row="1" x:Name="x_weeklyPanel" Margin="8"
+          Visibility="Collapsed">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <StackPanel Grid.Row="0" Orientation="Horizontal">
+        <Label Content="Every "/>
+        <GuiControls:NumericTextBox Width="40" VerticalAlignment="Center"
+                                    x:Name="x_weeklyRepeatTextBox"
+                                    Text="1"/>
+        <Label Content=" weeks(s) on:"/>
+      </StackPanel>
+
+      <StackPanel Grid.Row="1" Orientation="Horizontal"
+                  HorizontalAlignment="Center">
+        <StackPanel.Resources>
+          <Style TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource SquareToggleButtonStyle}"/>
+        </StackPanel.Resources>
+        <ToggleButton Content="S" x:Name="x_weeklyDaySun"/>
+        <ToggleButton Content="M" x:Name="x_weeklyDayMon"/>
+        <ToggleButton Content="T" x:Name="x_weeklyDayTue"/>
+        <ToggleButton Content="W" x:Name="x_weeklyDayWed"/>
+        <ToggleButton Content="T" x:Name="x_weeklyDayThu"/>
+        <ToggleButton Content="F" x:Name="x_weeklyDayFri"/>
+        <ToggleButton Content="S" x:Name="x_weeklyDaySat"/>
+      </StackPanel>
+    </Grid>
+
+    <!-- Monthly -->
+    <Grid Grid.Row="1" x:Name="x_monthlyPanel" Margin="8"
+          Visibility="Collapsed">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <StackPanel Grid.Row="0" Orientation="Horizontal">
+        <Label Content="Every "/>
+        <GuiControls:NumericTextBox Width="40" 
+                                    x:Name="x_monthlyRepeatTextBox"
+                                    Text="1"
+                                    VerticalAlignment="Center"/>
+        
+        <Label Content=" month(s) on:"/>
+      </StackPanel>
+
+      <StackPanel Grid.Row="1" Orientation="Horizontal">
+        <RadioButton GroupName="RadioMonthly" VerticalAlignment="Center"
+                     x:Name="x_monthlyEachRadioButton"
+                     Checked="RadioButtonMonthlyEach_Checked"
+                     Unchecked="RadioButtonMonthlyEach_Checked"
+                     IsChecked="True"/>
+        <Label Content=" Each" VerticalAlignment="Center"/>
+      </StackPanel>
+
+      <WrapPanel Grid.Row="2" Orientation="Horizontal"
+                  HorizontalAlignment="Center"
+                  Margin="8,0,0,0"
+                 Width="140"
+                 >
+        <WrapPanel.Resources>
+          <Style TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource SquareToggleButtonStyle}">
+            <Setter Property="Width" Value="20"/>
+            <Setter Property="Height" Value="20"/>
+          </Style>
+        </WrapPanel.Resources>
+        <ToggleButton Content="1" x:Name="x_monthlyDay1"/>
+        <ToggleButton Content="2" x:Name="x_monthlyDay2"/>
+        <ToggleButton Content="3" x:Name="x_monthlyDay3"/>
+        <ToggleButton Content="4" x:Name="x_monthlyDay4"/>
+        <ToggleButton Content="5" x:Name="x_monthlyDay5"/>
+        <ToggleButton Content="6" x:Name="x_monthlyDay6"/>
+        <ToggleButton Content="7" x:Name="x_monthlyDay7"/>
+
+        <ToggleButton Content="8" x:Name="x_monthlyDay8"/>
+        <ToggleButton Content="9" x:Name="x_monthlyDay9"/>
+        <ToggleButton Content="10" x:Name="x_monthlyDay10"/>
+        <ToggleButton Content="11" x:Name="x_monthlyDay11"/>
+        <ToggleButton Content="12" x:Name="x_monthlyDay12"/>
+        <ToggleButton Content="13" x:Name="x_monthlyDay13"/>
+        <ToggleButton Content="14" x:Name="x_monthlyDay14"/>
+
+        <ToggleButton Content="15" x:Name="x_monthlyDay15"/>
+        <ToggleButton Content="16" x:Name="x_monthlyDay16"/>
+        <ToggleButton Content="17" x:Name="x_monthlyDay17"/>
+        <ToggleButton Content="18" x:Name="x_monthlyDay18"/>
+        <ToggleButton Content="19" x:Name="x_monthlyDay19"/>
+        <ToggleButton Content="20" x:Name="x_monthlyDay20"/>
+        <ToggleButton Content="21" x:Name="x_monthlyDay21"/>
+        <ToggleButton Content="22" x:Name="x_monthlyDay22"/>
+        <ToggleButton Content="23" x:Name="x_monthlyDay23"/>
+        <ToggleButton Content="24" x:Name="x_monthlyDay24"/>
+        <ToggleButton Content="25" x:Name="x_monthlyDay25"/>
+        <ToggleButton Content="26" x:Name="x_monthlyDay26"/>
+        <ToggleButton Content="27" x:Name="x_monthlyDay27"/>
+        <ToggleButton Content="28" x:Name="x_monthlyDay28"/>
+
+        <ToggleButton Content="29" x:Name="x_monthlyDay29"/>
+        <ToggleButton Content="30" x:Name="x_monthlyDay30"/>
+        <ToggleButton Content="31" x:Name="x_monthlyDay31"/>
+
+      </WrapPanel>
+
+      <StackPanel Grid.Row="3" Orientation="Horizontal">
+        <RadioButton GroupName="RadioMonthly" VerticalAlignment="Center"
+                     x:Name="x_monthlyOnRadioButton"
+                     Checked="RadioButtonMonthlyOn_Checked"
+                     Unchecked="RadioButtonMonthlyOn_Checked"
+                     />
+        <Label Content=" On the" VerticalAlignment="Center"/>
+      </StackPanel>
+
+      <StackPanel Grid.Row="4" Orientation="Horizontal"
+                  Margin="8,0,0,0">
+        <ComboBox Width="60" x:Name="x_monthlyOnIntervalComboBox"
+                  IsEnabled="False">
+          <ComboBoxItem Content="first"/>
+          <ComboBoxItem Content="second"/>
+          <ComboBoxItem Content="third" IsSelected="True"/>
+          <ComboBoxItem Content="fourth"/>
+          <Separator/>
+          <ComboBoxItem Content="last"/>
+        </ComboBox>
+
+        <ComboBox Width="80" Margin="8,0,0,0"
+                  x:Name="x_monthlyOnDayComboBox"
+                  IsEnabled="False">
+          <ComboBoxItem Content="Sunday"/>
+          <ComboBoxItem Content="Monday"/>
+          <ComboBoxItem Content="Tuesday"/>
+          <ComboBoxItem Content="Wednesday"/>
+          <ComboBoxItem Content="Thursday"/>
+          <ComboBoxItem Content="Friday" IsSelected="True"/>
+          <ComboBoxItem Content="Saturday"/>
+          <Separator/>
+          <ComboBoxItem Content="day"/>
+          <ComboBoxItem Content="weekday"/>
+          <ComboBoxItem Content="weekend day"/>
+
+        </ComboBox>
+      </StackPanel>
+    </Grid>
+
+    <!-- Yearly -->
+    <Grid Grid.Row="1" x:Name="x_yearlyPanel" Margin="8"
+          Visibility="Collapsed">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <StackPanel Grid.Row="0" Orientation="Horizontal">
+        <Label Content="Every "/>
+        <GuiControls:NumericTextBox Width="40" 
+                                    x:Name="x_yearlySkipTextBox"
+                                    Text="1"
+                                    VerticalAlignment="Center"/>
+        <Label Content=" year(s) in:"/>
+      </StackPanel>
+
+      <WrapPanel Grid.Row="1" Orientation="Horizontal"
+                 HorizontalAlignment="Center"
+                 Width="140"
+                 >
+        <WrapPanel.Resources>
+          <Style TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource SquareToggleButtonStyle}">
+            <Setter Property="Width" Value="35"/>
+            <Setter Property="Height" Value="35"/>
+          </Style>
+        </WrapPanel.Resources>
+        
+        <ToggleButton Content="Jan" x:Name="x_yearlyJan"/>
+        <ToggleButton Content="Feb" x:Name="x_yearlyFeb"/>
+        <ToggleButton Content="Mar" x:Name="x_yearlyMar"/>
+        <ToggleButton Content="Apr" x:Name="x_yearlyApr"/>
+
+        <ToggleButton Content="May" x:Name="x_yearlyMay"/>
+        <ToggleButton Content="Jun" x:Name="x_yearlyJun"/>
+        <ToggleButton Content="Jul" x:Name="x_yearlyJul"/>
+        <ToggleButton Content="Aug" x:Name="x_yearlyAug"/>
+
+        <ToggleButton Content="Sep" x:Name="x_yearlySep"/>
+        <ToggleButton Content="Oct" x:Name="x_yearlyOct"/>
+        <ToggleButton Content="Nov" x:Name="x_yearlyNov"/>
+        <ToggleButton Content="Dec" x:Name="x_yearlyDec"/>
+
+      </WrapPanel>
+
+      <!--<StackPanel Grid.Row="2" Orientation="Horizontal">
+        <CheckBox VerticalAlignment="Center"/>
+        <Label Content=" On the" VerticalAlignment="Center"/>
+      </StackPanel>
+
+      <StackPanel Grid.Row="3" Orientation="Horizontal"
+                  Margin="8,0,0,0">
+        <ComboBox Width="60"
+                  IsEnabled="False"
+                  x:Name="x_yearlyIntervalComboBox">
+          <ComboBoxItem Content="first"/>
+          <ComboBoxItem Content="second"/>
+          <ComboBoxItem Content="third" IsSelected="True"/>
+          <ComboBoxItem Content="fourth"/>
+          <Separator/>
+          <ComboBoxItem Content="last"/>
+        </ComboBox>
+
+        <ComboBox Width="80" Margin="8,0,0,0"
+                  IsEnabled="False"
+                  x:Name="x_yearlyDateComboBox">
+          <ComboBoxItem Content="Sunday"/>
+          <ComboBoxItem Content="Monday"/>
+          <ComboBoxItem Content="Tuesday"/>
+          <ComboBoxItem Content="Wednesday"/>
+          <ComboBoxItem Content="Thursday"/>
+          <ComboBoxItem Content="Friday" IsSelected="True"/>
+          <ComboBoxItem Content="Saturday"/>
+          <Separator/>
+          <ComboBoxItem Content="day"/>
+          <ComboBoxItem Content="weekday"/>
+          <ComboBoxItem Content="weekend day"/>
+
+        </ComboBox>
+      </StackPanel>-->
+    </Grid>
+
+    <!-- Control buttons -->
+    <StackPanel Grid.Row="2" Orientation="Horizontal">
+      <StackPanel.Resources>
+        <Style TargetType="Button">
+          <Setter Property="Width" Value="80"/>
+          <Setter Property="Margin" Value="8"/>
+        </Style>
+      </StackPanel.Resources>
+      <Button Content="OK" IsDefault="True"
+              Click="OKButton_Click"/>
+      <Button Content="Cancel" IsCancel="True"
+              Click="CancelButton_Click"/>
+    </StackPanel>
+  </Grid>
+</UserControl>

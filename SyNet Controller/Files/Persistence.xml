@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Controller>
+
+  <!-- Nodes -->
+  <Nodes>
+    <Node Name="Lights" SerialNumber="3lkjlakj" NetworkAddress="32423">
+      <Catalog>
+        <Function Id="0" Name="FadeLights">
+          <Parameters>
+            <Parameter ID="1" Name="Red" ValidationType="2"/>
+            <Parameter ID="2" Name="Green" ValidationType="2"/>
+            <Parameter ID="3" Name="Blue" ValidationType="2"/>
+          </Parameters>
+        </Function>
+      </Catalog>
+    </Node>
+  </Nodes>
+
+  <!-- Actions -->
+  <Actions>
+    <Action xsi:type="DeviceAction" ActionID="1" Name="DeviceAction  1">
+      <ActionFunctions Name="FadeLights" DeviceID="1" FunctionID="1">
+        <ActionParameters>
+          <ActionParameter ParamID="3213583912843535583" DependentParamID="0" Name="Red" DataType="WORD" ValidationType="PVT_UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" Value="0" ID="1" ParameterType="INPUT" />
+          <ActionParameter ParamID="7153426175893637476" DependentParamID="0" Name="Green" DataType="WORD" ValidationType="PVT_UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" Value="0" ID="2" ParameterType="INPUT" />
+          <ActionParameter ParamID="7757876001286993231" DependentParamID="0" Name="Blue" DataType="WORD" ValidationType="PVT_UNSIGNED_RANGE" MinimumValue="0" MaximumValue="4095" MaxStringLength="-1" IsSigned="false" Value="1000" ID="3" ParameterType="INPUT" />
+          <ActionParameter ParamID="13083253927914034667" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="PVT_UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" Value="0" ID="4" ParameterType="INPUT" />
+        </ActionParameters>
+      </ActionFunctions>
+    </Action>
+
+    <Action xsi:type="LoopAction" ActionID="1" Name="DeviceAction  1">
+      <ActionList>
+        <Action ActionID="1">
+          <ActionParameter ParamID="13083253927914034667" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="PVT_UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" Value="0" ID="4" ParameterType="INPUT" />
+          <ActionParameter ParamID="13083253927914034667" DependentParamID="0" Name="FadeTime" DataType="WORD" ValidationType="PVT_UNSIGNED_RANGE" MinimumValue="0" MaximumValue="10000" MaxStringLength="-1" IsSigned="false" Value="0" ID="4" ParameterType="INPUT" />
+        </Action>
+      </ActionList>
+    </Action>
+  </Actions>
+
+  <!-- Gui -->
+  <GuiPanels>
+    <GuiPanel Title="">
+      <GuiAction ActionID="234234243">
+        <GuiParameter ParamID="23424234" Value="34" Type="SLIDER"/>
+      </GuiAction>
+    </GuiPanel>
+  </GuiPanels>
+
+
+</Controller>

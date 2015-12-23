@@ -1,0 +1,210 @@
+﻿<Window x:Class="SyNet.Gui.ToolboxWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Toolbox="clr-namespace:SyNet.Gui.Toolbox"
+        Title="Toolbox" 
+        MinHeight="200" MinWidth="200" 
+        ShowInTaskbar="False" 
+        ResizeMode="CanResizeWithGrip" WindowStyle="ThreeDBorderWindow"
+        Width="{Binding Source={StaticResource settings}, Path=Default.WindowGuiPanelToolboxWidth, Mode=TwoWay}"
+        Height="{Binding Source={StaticResource settings}, Path=Default.WindowGuiPanelToolboxHeight, Mode=TwoWay}"
+        Top="{Binding Source={StaticResource settings}, Path=Default.WindowGuiPanelToolboxTop, Mode=TwoWay}"
+        Left="{Binding Source={StaticResource settings}, Path=Default.WindowGuiPanelToolboxLeft, Mode=TwoWay}"
+        Background="{x:Static SystemColors.ControlBrush}">
+  <Window.Resources>
+    
+    <Style TargetType="Label">
+      <Setter Property="Margin" Value="0,0,4,4"/>
+    </Style>
+
+    <Style TargetType="Slider">
+      <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="CheckBox">
+      <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="TextBox">
+      <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="ComboBox">
+      <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <!-- Fill Brushes -->
+
+    <LinearGradientBrush x:Key="NormalBrush" StartPoint="0,0" EndPoint="0,1">
+      <GradientBrush.GradientStops>
+        <GradientStopCollection>
+          <GradientStop Color="#FFF" Offset="0.0"/>
+          <GradientStop Color="#CCC" Offset="1.0"/>
+        </GradientStopCollection>
+      </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+
+
+    <LinearGradientBrush x:Key="CheckedBrush" StartPoint="0,0" EndPoint="0,1">
+      <GradientBrush.GradientStops>
+        <GradientStopCollection>
+          <GradientStop Color="#FFF" Offset="0.0"/>
+          <GradientStop Color="#A9D0F5" Offset="1.0"/>
+        </GradientStopCollection>
+      </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
+
+    <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="#EEE" />
+
+    <!-- Border Brushes -->
+
+    <LinearGradientBrush x:Key="NormalBorderBrush" StartPoint="0,0" EndPoint="0,1">
+      <GradientBrush.GradientStops>
+        <GradientStopCollection>
+          <GradientStop Color="#CCC" Offset="0.0"/>
+          <GradientStop Color="#444" Offset="1.0"/>
+        </GradientStopCollection>
+      </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <Style x:Key="ButtonFocusVisual">
+      <Setter Property="Control.Template">
+        <Setter.Value>
+          <ControlTemplate>
+            <Border>
+              <Rectangle 
+            Margin="2"
+            StrokeThickness="1"
+            Stroke="#60000000"
+            StrokeDashArray="1 2"/>
+            </Border>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style TargetType="ToggleButton">
+      <Setter Property="SnapsToDevicePixels" Value="true"/>
+      <Setter Property="OverridesDefaultStyle" Value="true"/>
+      <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+      <Setter Property="MinHeight" Value="16"/>
+      <Setter Property="MinWidth" Value="16"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="ToggleButton">
+            <Border 
+          x:Name="Border"  
+          CornerRadius="0" 
+          BorderThickness="0,1,1,1"
+          Background="{StaticResource NormalBrush}"
+          BorderBrush="{StaticResource NormalBorderBrush}">
+              <ContentPresenter 
+            Margin="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            RecognizesAccessKey="True"/>
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsChecked" Value="true">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource CheckedBrush}" />
+              </Trigger>
+              <!--<Trigger Property="IsKeyboardFocused" Value="true">
+                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DefaultedBorderBrush}" />
+              </Trigger>-->
+              <!--<Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource DarkBrush}" />
+              </Trigger>-->
+              <!--<Trigger Property="IsPressed" Value="true">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource PressedBrush}" />
+              </Trigger>-->
+              <Trigger Property="IsEnabled" Value="false">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource DisabledBackgroundBrush}" />
+                <!--<Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource DisabledBorderBrush}" />-->
+                <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </Window.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <!-- Tab buttons -->
+    <Grid Grid.Row="0" Background="{StaticResource NormalBrush}">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/> 
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+      <Grid.Resources>
+        <Style TargetType="Image">
+          <Setter Property="Width" Value="16"/>
+          <Setter Property="Height" Value="16"/>
+        </Style>
+      </Grid.Resources>
+
+      <!-- Buttons -->
+      <ToggleButton Grid.Column="0"
+                    PreviewMouseDown="PanelButton_Click"
+                    Checked="PanelButton_Checked"
+                    Unchecked="PanelButton_Checked"
+                    x:Name="x_buttonPanel"
+                    ToolTip="Panel Properties">
+        <Image Source="pack://application:,,,/Resources/ApplicationEditSmall.png"/>
+      </ToggleButton>
+      <ToggleButton Grid.Column="1"
+                    PreviewMouseDown="ActionButton_Click"
+                    Checked="ActionButton_Checked"
+                    Unchecked="ActionButton_Checked"
+                    ToolTip="Actions"
+                    x:Name="x_buttonAction">
+        <Image Source="pack://application:,,,/Resources/Actions/ActionSmall.png"/>
+      </ToggleButton>
+      <ToggleButton Grid.Column="2"
+                    PreviewMouseDown="TriggerButton_Click"
+                    Checked="TriggerButton_Checked"
+                    Unchecked="TriggerButton_Checked"
+                    ToolTip="Triggers"
+                    x:Name="x_buttonTrigger">
+        <Image Source="pack://application:,,,/Resources/Events/TriggerSmall.png"/>
+      </ToggleButton>
+      <ToggleButton Grid.Column="3"
+                    PreviewMouseDown="ControlButton_Click"
+                    Checked="ControlButton_Checked"
+                    Unchecked="ControlButton_Checked"
+                    ToolTip="Controls"
+                    x:Name="x_buttonControl">
+        <Image Source="pack://application:,,,/Resources/Controls/TextfieldSmall.png"/>
+      </ToggleButton>
+      <ToggleButton Grid.Column="4"
+                    PreviewMouseDown="PropertiesButton_Click"
+                    Checked="PropertiesButton_Checked"
+                    Unchecked="PropertiesButton_Checked"
+                    ToolTip="Control Properties"
+                    x:Name="x_buttonProperties">
+        <Image Source="pack://application:,,,/Resources/Settings/SettingsSmall.png"/>
+      </ToggleButton>
+    </Grid>
+    
+    <!-- Toolbox Area -->
+    <Grid Grid.Row="1" Margin="5">
+      <Toolbox:PanelConfig x:Name="x_contentPanel" Visibility="Collapsed" DataContext="{Binding}"/>
+      <Toolbox:ToolboxActionPanel x:Name="x_contentActions" Visibility="Collapsed"/>
+      <Toolbox:ToolboxTriggerPanel x:Name="x_contentTriggers" Visibility="Collapsed"/>
+      <ContentControl x:Name="x_contentProperties" Visibility="Collapsed"/>
+    </Grid>
+  </Grid>
+</Window>

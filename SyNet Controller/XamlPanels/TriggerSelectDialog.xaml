@@ -1,0 +1,25 @@
+﻿<Window x:Class="SyNet.XamlPanels.TriggerSelectDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Top="{Binding Source={StaticResource settings}, Path=Default.WindowTriggerTop, Mode=TwoWay}"
+    Left="{Binding Source={StaticResource settings}, Path=Default.WindowTriggerLeft, Mode=TwoWay}"
+    Icon="pack://application:,,,/Resources/Events/TriggerSmall.png"
+    Title="Available Triggers"  Width="300" Height="400">
+    <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <GroupBox Header="Select a Trigger ">
+      <TreeView Name="x_treeView"
+                SelectedItemChanged="TreeView_SelectedItemChanged"/>
+    </GroupBox>
+    <StackPanel Grid.Row="1"  Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+      <Button Style="{StaticResource DialogButtonStyle}" IsCancel="True">Cancel</Button>
+      <Button 
+        Name="x_OKButton"
+        Click="OKButton_Click"
+        Style="{StaticResource DialogButtonStyle}" IsDefault="True" IsEnabled="False">OK</Button>
+    </StackPanel>
+  </Grid>
+</Window>

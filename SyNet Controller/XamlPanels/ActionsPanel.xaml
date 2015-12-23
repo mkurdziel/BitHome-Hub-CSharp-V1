@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="SyNet.XamlPanels.ActionsPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:GuiHelpers="clr-namespace:SyNet.GuiHelpers"
+    xmlns:XamlPanels="clr-namespace:SyNet.XamlPanels"
+    MinHeight="300" MinWidth="500">
+  <UserControl.Resources>
+    <Style x:Key="menuTitleStyle" TargetType="MenuItem">
+      <Setter Property="IsEnabled" Value="False"/>
+      <Setter Property="Background" Value="LightGray"/>
+    </Style>
+    <GuiHelpers:ActionRunningToIconConverter x:Key="ActionRunningIconConverter" />
+  </UserControl.Resources>
+  <Grid Name="x_mainGrid">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <!-- Action Selection Panel -->
+      <ListView Name="x_actionList" 
+                  SelectionChanged="ActionList_SelectionChanged"
+                  Grid.ColumnSpan="3"
+                  Width="200"
+                  >
+        <ListView.ContextMenu>
+          <ContextMenu>
+            <MenuItem Header="Execute" Click="Action_Execute"/>
+            <MenuItem Header="Duplicate" Click="Action_Duplicate"/>
+          </ContextMenu>
+        </ListView.ContextMenu>
+        <ListView.View>
+          <GridView>
+            <GridViewColumn Header="Action Name" DisplayMemberBinding="{Binding Path=Name}"/>
+            <GridViewColumn Header="">
+              <GridViewColumn.CellTemplate>
+                <DataTemplate>
+                  <Image Height="16" Width="16" Source="pack://application:,,,/Resources/ArrowRotateClockwise.png" 
+                           Visibility="{Binding Path=IsRunning, Converter={StaticResource ActionRunningIconConverter}}"/>
+                </DataTemplate>
+              </GridViewColumn.CellTemplate>
+            </GridViewColumn>
+          </GridView>
+        </ListView.View>
+      </ListView>
+      <Button Grid.Row="1" x:Name="x_ActionAddButton" Click="x_ActionAddButton_Click">
+        <Button.ContextMenu>
+          <ContextMenu x:Name="x_ActionAddContextMenu">
+            <MenuItem Header="Action Types" Style="{StaticResource menuTitleStyle}"/>
+          </ContextMenu>
+        </Button.ContextMenu>
+        <Image Height="10" Source="pack://application:,,,/Resources/PlusSmall.png" Width="10" />
+      </Button>
+      <Button Name="x_ActionMinusButton" Grid.Row="1" Grid.Column="1" Click="x_ActionMinusButton_Click">
+        <Image Height="10" Source="pack://application:,,,/Resources/MinusSmall.png" Width="10" />
+      </Button>
+    </Grid>
+    <XamlPanels:SequenceActionEditPanel x:Name="x_editPanel"
+                                        Grid.Column="1"
+                                        Margin="4"
+                                        DataContext="{Binding ElementName=x_actionList, Path=SelectedValue}"
+                                        Visibility="Collapsed">
+
+    </XamlPanels:SequenceActionEditPanel>
+    <Label x:Name="x_noSelectionLabel" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Italic" Foreground="DarkGray" FontSize="14">
+      Select an action from the list to configure it...
+    </Label>
+  </Grid>
+</UserControl>

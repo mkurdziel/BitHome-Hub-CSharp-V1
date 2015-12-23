@@ -1,0 +1,84 @@
+﻿<Window x:Class="SyNet.Controller"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:GuiControls="clr-namespace:SyNet.GuiControls"
+    xmlns:GuiHelpers="clr-namespace:SyNet.GuiHelpers"
+    Icon="Resources\ApplicationHome.png"
+    Title="SyNet Home Controller" 
+    Width="{Binding Source={StaticResource settings}, Path=Default.WindowMainWidth, Mode=TwoWay}"
+    Height="{Binding Source={StaticResource settings}, Path=Default.WindowMainHeight, Mode=TwoWay}"
+    Top="{Binding Source={StaticResource settings}, Path=Default.WindowMainTop, Mode=TwoWay}"
+    Left="{Binding Source={StaticResource settings}, Path=Default.WindowMainLeft, Mode=TwoWay}"
+    Closing="Window_Closing"  Background="White">
+    <Window.Resources>
+        <GuiHelpers:SerialStatusToIconConverter x:Key="SerialStatusIconConverter" />
+
+    </Window.Resources>
+    <DockPanel>
+        <!-- Menu Bar on the top -->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Exit" Click="MenuItemFileExit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Preferences..." Click="MenuItemEditPreferences_Click"/>
+            </MenuItem>
+        </Menu>
+        <!-- Status bar on bottom -->
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Label>Connected:</Label>
+                <Image 
+          Width="10"
+          Source="{Binding Path=IsSerialConnected, 
+          Converter={StaticResource SerialStatusIconConverter}}"/>
+            </StackPanel>
+            <Button Grid.Column="1" HorizontalAlignment="Left" Width="49.927" Click="Button_Click">Connect</Button>
+        </Grid>
+
+        <TabControl x:Name="m_TabControl">
+            <TabControl.ContextMenu>
+                <ContextMenu x:Name="ContextMenuTabControl" PreviewMouseRightButtonDown="ContextMenuTabControl_PreviewMouseRightButtonDown"/>
+            </TabControl.ContextMenu>
+            <TabItem Header="Packet Log">
+                <Grid>
+                    <ListView x:Name="m_ListBox">
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <ListBoxItem MouseUp="Button_Click_Clear">Clear</ListBoxItem>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Timestamp" DisplayMemberBinding="{Binding Path=Timestamp}" />
+                                <GridViewColumn Header="MsgType" DisplayMemberBinding="{Binding Path=MsgType}" />
+                                <GridViewColumn Header="Information" Width="300" DisplayMemberBinding="{Binding Path=Information}"/>
+                                <GridViewColumn Header="Direction" DisplayMemberBinding="{Binding Path=Direction}"/>
+                                <GridViewColumn Header="Length" DisplayMemberBinding="{Binding Path=Length}"/>
+                                <GridViewColumn Header="Data" Width="500"  DisplayMemberBinding="{Binding Path=ByteString}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Nodes">
+                <GuiControls:NodeList x:Name="m_nodeList"/>
+            </TabItem>
+            <TabItem Header="Updater">
+                <GuiControls:DeviceUpdater x:Name="m_updater"/>
+            </TabItem>
+            <TabItem Header="Routes">
+                <GuiControls:RouteConfig x:Name="m_routes"/>
+            </TabItem>
+            <TabItem Header="Actions">
+                <GuiControls:ActionsPanel x:Name="m_actions"/>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>

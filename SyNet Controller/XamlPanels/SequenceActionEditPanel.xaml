@@ -1,0 +1,117 @@
+﻿<UserControl x:Class="SyNet.XamlPanels.SequenceActionEditPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:XamlPanels="clr-namespace:SyNet.XamlPanels"
+    xmlns:GuiHelpers="clr-namespace:SyNet.GuiHelpers"
+    xmlns:SyNet="clr-namespace:SyNet"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+             MinWidth="200" MinHeight="200"
+             >
+  <UserControl.Resources>
+    <GuiHelpers:ActionTypeToIconConverter x:Key="ActionTypeToIconConverter" />
+
+    <DataTemplate x:Key="actionItemTemplateDrag">
+      <StackPanel Opacity=".6">
+        <Border BorderBrush="DarkBlue" CornerRadius="2" BorderThickness="1" Background="White">
+          <TextBlock Text="{Binding Path=Information}" TextAlignment="Center" FontWeight="Bold" />
+        </Border>
+      </StackPanel>
+    </DataTemplate>
+
+
+    <HierarchicalDataTemplate x:Key="ParameterItemTemplate"
+                              DataType="x:Type ActionParameter">
+      <StackPanel Orientation="Horizontal" Height="18">
+        <Image Height="16" Width="16"
+               Source="{Binding ParameterType, Converter={StaticResource ActionTypeToIconConverter}}"/>
+        <TextBlock Text="{Binding FullName}" Margin="2,0,0,0"/>
+      </StackPanel>
+    </HierarchicalDataTemplate>
+
+    <HierarchicalDataTemplate x:Key="ActionItemTemplate"
+                              DataType="x:Type ActionItem"
+                              ItemsSource="{Binding Path=ActionParameters}"
+                              ItemTemplate="{StaticResource ParameterItemTemplate}">
+      <StackPanel Orientation="Horizontal">
+        <Image Height="16" Width="16" Source="pack://application:,,,/Resources/Actions/ActionSmall.png"/>
+        <TextBlock Text="{Binding Information}" Margin="2,0,0,0"/>
+      </StackPanel>
+    </HierarchicalDataTemplate>
+  </UserControl.Resources>
+
+  <Grid>
+    <GroupBox Header="Action Setup">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="80" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition/>
+          <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label >Name:</Label>
+        <TextBox Grid.Column="1" 
+                 Name="x_functionNameTextBox"
+                 Text="{Binding Path=Name}"
+                 VerticalAlignment="Center"
+                 HorizontalAlignment="Left"
+                 Width="200" />
+
+        <Label Grid.Row="1">Loop Count:</Label>
+        <TextBox Grid.Row="1" Grid.Column="1"
+                 DataContext="{Binding InputNumLoops}"
+                 Text="{Binding StringValue}"
+                 />
+
+        <Label Grid.Row="2">Actions:</Label>
+        <Grid Grid.Row="2" Grid.Column="1">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+
+          <TreeView x:Name="x_actionTreeView"
+                    AllowDrop="True"
+                    Grid.ColumnSpan="3"
+                    ItemsSource="{Binding ActionItems}"
+                    ItemTemplate="{StaticResource ActionItemTemplate}"
+                    GuiHelpers:DragDropHelper.IsDragSource="true"
+                    GuiHelpers:DragDropHelper.IsDropTarget="true"
+                    GuiHelpers:DragDropHelper.DragDropTemplate="{StaticResource actionItemTemplateDrag}"
+                    SelectedItemChanged="ActionTreeView_SelectedItemChanged">
+          </TreeView>
+
+          <Button Grid.Row="1" x:Name="x_actionAddButton" Click="ActionAddButton_click">
+            <Image Height="10" Source="pack://application:,,,/Resources/PlusSmall.png" Width="10" />
+          </Button>
+          <Button Name="x_actionMinusButton" Grid.Row="1" Grid.Column="1"
+                  Click="ActionMinusButton_Click">
+            <Image Height="10" Source="pack://application:,,,/Resources/MinusSmall.png" Width="10" />
+          </Button>
+        </Grid>
+
+        <Label Grid.Column="0" Grid.Row="3">Parameter:</Label>
+        <Label Name="x_noParamLabel"
+               Grid.Column="1"
+               Grid.Row="3"
+               HorizontalAlignment="Left"
+               Visibility="Visible"
+               VerticalAlignment="Top">Select a parameter to edit it's properties</Label>
+        <XamlPanels:ParameterEditPanel Grid.Column="1" 
+                                       Grid.Row="3" 
+                                       Visibility="Hidden"
+                                       x:Name="x_paramEditPanel"
+                                       Margin="0,4,0,0"
+                                       />
+      </Grid>
+    </GroupBox>
+  </Grid>
+</UserControl>

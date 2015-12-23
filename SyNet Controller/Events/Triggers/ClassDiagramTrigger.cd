@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SyNet.Events.Triggers.DateTimeTrigger">
+    <Position X="11" Y="0.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="SyNet.Events.Triggers.DateTimeTrigger.EsnDateType">
+        <TypeIdentifier>
+          <NewMemberFileName>Events\Triggers\DateTimeTrigger.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="SyNet.Events.Triggers.DateTimeTrigger.EsnValueDisplayFormat">
+        <TypeIdentifier>
+          <NewMemberFileName>Events\Triggers\DateTimeTrigger.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AQoCCAmQCAQoBQoEABAQAKAIIAQQEhiAA5AgCEABAgQ=</HashCode>
+      <FileName>Events\Triggers\DateTimeTrigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyNet.Events.Triggers.Trigger">
+    <Position X="0.75" Y="0.75" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="SyNet.Events.Triggers.Trigger.EsnMatchOperation">
+        <TypeIdentifier>
+          <NewMemberFileName>Events\Triggers\Trigger.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAIAYQCQCghAAMAhCQKAQAgiACIAABQIBgDIAoQgM=</HashCode>
+      <FileName>Events\Triggers\Trigger.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SyNet.Events.Triggers.MessageTrigger">
+    <Position X="4" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>gAAACAAQAAAQgQAACAAAAAQAAAACgAACwIAgGACAAAA=</HashCode>
+      <FileName>Events\Triggers\MessageTrigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SyNet.Events.Triggers.StatusTrigger">
+    <Position X="7.25" Y="0.5" Width="3" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="SyNet.Events.Triggers.StatusTrigger.StateEnum">
+        <TypeIdentifier>
+          <NewMemberFileName>Events\Triggers\StatusTrigger.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>gAAEAAAQACEQAQAAAAAAAAQAQCACAEAAwIQgEACMAAA=</HashCode>
+      <FileName>Events\Triggers\StatusTrigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

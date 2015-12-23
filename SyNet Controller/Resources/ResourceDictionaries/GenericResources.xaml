@@ -1,0 +1,225 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:settings="clr-namespace:SyNet.Properties"
+    xmlns:GuiHelpers="clr-namespace:SyNet.GuiHelpers">
+
+  <settings:Settings x:Key="settings" />
+
+  <Style x:Key="GroupBoxHiddenStyle" TargetType="GroupBox">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="GroupBox">
+          <ContentPresenter 
+              Margin="4" 
+              RecognizesAccessKey="True" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <GuiHelpers:ColorToBrushConverter x:Key="ColorBrushConverter" />
+  <SolidColorBrush x:Key="SelectedBorderBrush" Color="#667997" />
+  <SolidColorBrush x:Key="SelectedBackgroundBrush" Color="#B7CAE8" />
+
+  <Style x:Key="ThumbResizeBoxStyle" TargetType="Thumb">
+    <Setter Property="Width" Value="8"/>
+    <Setter Property="Height" Value="8"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Thumb">
+          <Border Name="x_border"
+                      Opacity="0.8"
+                      BorderBrush="White"
+                      BorderThickness="1.0">
+            <Border Name="x_innerBorder"
+                      Opacity="0.8"
+                      Background="Black"
+                      BorderThickness="0">
+            </Border>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="x_border" Property="Opacity" Value="1"/>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="ThumbMoveBoxStyle" TargetType="Thumb">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Thumb">
+          <Border Name="x_border"
+                      Opacity="1.0"
+                      BorderBrush="{StaticResource SelectedBorderBrush}"
+                      BorderThickness="1.0">
+            <Border Name="x_innerBorder"
+                      Opacity="0.5"
+                      Background="{StaticResource SelectedBackgroundBrush}"
+                      BorderThickness="0">
+            </Border>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="x_border" Property="Opacity" Value="1"/>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="ThumbConfigStyle" TargetType="Thumb">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Thumb">
+          <Border Name="x_border"
+                      Opacity="1.0"
+                      Height="14"
+                      Width="14"
+                      BorderBrush="Black"
+                      BorderThickness="1.0"
+                      Background="White">
+            <Image Source="pack://application:,,,/Resources/Settings/SettingsTiny.png"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Width="10" Height="10"/>
+          </Border>
+
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="x_border" Property="Opacity" Value="1"/>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="ThumbMoveStyle" TargetType="Thumb">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Thumb">
+          <Border Name="x_border"
+                      Opacity="1.0"
+                      Height="14"
+                      Width="14"
+                      BorderBrush="Black"
+                      BorderThickness="1.0"
+                      Background="White">
+            <Image Source="pack://application:,,,/Resources/MoveTiny.png"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Width="10" Height="10"/>
+          </Border>
+
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="x_border" Property="Opacity" Value="1"/>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="ThumbDeleteStyle" TargetType="Thumb">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Thumb">
+          <Border Name="x_border"
+                      Opacity="1.0"
+                      Height="14"
+                      Width="14"
+                      BorderBrush="Black"
+                      BorderThickness="1.0"
+                      Background="White">
+            <Image Source="pack://application:,,,/Resources/DeleteTiny.png"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Width="10" Height="10"/>
+          </Border>
+
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="x_border" Property="Opacity" Value="1"/>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="GroupBoxNoLine" TargetType="GroupBox">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="GroupBox">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ContentPresenter Margin="4"
+                                  RecognizesAccessKey="True" />
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="DialogButtonStyle" TargetType="Button">
+    <Setter Property="Width" Value="75"/>
+    <Setter Property="Height" Value="25"/>
+    <Setter Property="Margin" Value="4"/>
+  </Style>
+
+  <Style x:Key="ImageButtonStyle"
+              TargetType="{x:Type GuiHelpers:ImageButton}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate>
+          <Grid x:Name="x_imageButtonGrid"
+                    Opacity=".9">
+            <Image Source="{Binding Path=(GuiHelpers:ImageButton.Source),
+                       RelativeSource={RelativeSource FindAncestor,
+                       AncestorType={x:Type GuiHelpers:ImageButton}}}"
+                       HorizontalAlignment="Left"/>
+            <!--<TextBlock Text="{TemplateBinding Content}"
+                           HorizontalAlignment="Center" />-->
+          </Grid>
+
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="x_imageButtonGrid" Property="Opacity" Value="1"/>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <AdornerDecorator x:Key="TextBoxEditAdorner">
+    <AdornedElementPlaceholder/>
+  </AdornerDecorator>
+
+  <Style x:Key="SnExecuteStyle" TargetType="Button">
+    <Setter Property="MinWidth" Value="40"/>
+    <Setter Property="MinHeight" Value="24"/>
+  </Style>
+  
+  <Style x:Key="SnTextBoxStyle" TargetType="TextBox">
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="MinWidth" Value="40"/>
+    <Setter Property="MinHeight" Value="24"/>
+  </Style>
+
+  <Style x:Key="SnSliderStyle" TargetType="Slider">
+    <!-- Margin is required because the slider gets cropped when all the way
+             to the right of the range -->
+    <Setter Property="Margin" Value="0,0,1,0"/>
+    <Setter Property="MinWidth" Value="40"/>
+    <Setter Property="MinHeight" Value="26"/>
+  </Style>
+</ResourceDictionary>

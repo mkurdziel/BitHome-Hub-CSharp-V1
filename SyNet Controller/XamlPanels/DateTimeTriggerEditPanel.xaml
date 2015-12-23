@@ -1,0 +1,92 @@
+<UserControl x:Class="SyNet.XamlPanels.DateTimeTriggerEditPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:GuiControls="clr-namespace:SyNet.GuiControls"
+    xmlns:DateRepeat="clr-namespace:SyNet.GuiControls.DateRepeat"
+    >
+  <UserControl.Resources>
+    <!-- Miscellaneous Brushes -->
+    <SolidColorBrush x:Key="GlyphBrush" Color="#444" />
+  </UserControl.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+
+    <Label Grid.Column="0" Grid.Row="0">Description:</Label>
+    <TextBlock Grid.Column="1" Grid.Row="0" 
+                 Padding="0,6,0,0"
+                 Text="{Binding Narrative}" VerticalAlignment="Center"
+               MinWidth="200"
+                 TextWrapping="Wrap"/>
+
+    <Label Grid.Column="0" Grid.Row="1">Valid:</Label>
+    <Label Grid.Column="1" Grid.Row="1" Content="{Binding IsValid}"/>
+
+    <Label Grid.Column="0" Grid.Row="2">Date:</Label>
+    <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal">
+      <GuiControls:DateTimeEntryBox x:Name="x_dateTimeEntryBox"
+                                    HorizontalAlignment="Left"/>
+      <Button Content="Reset To Now"
+              HorizontalAlignment="Left"
+              Click="ResetButton_Click"/>
+    </StackPanel>
+
+    <Label Grid.Column="0" Grid.Row="3">Repeat:</Label>
+    <StackPanel Orientation="Horizontal" MouseDown="Repeat_MouseDown"
+                  Grid.Column="1" Grid.Row="3"
+                  IsHitTestVisible="True">
+      <Label>Edit</Label>
+      <Path 
+      x:Name="Arrow"
+      Grid.Column="1"     
+      Fill="{StaticResource GlyphBrush}"
+      HorizontalAlignment="Center"
+      VerticalAlignment="Center"
+      Data="M 0 0 L 4 4 L 8 0 Z"/>
+    </StackPanel>
+
+    <Label Grid.Column="0" Grid.Row="4">End:</Label>
+    <StackPanel Orientation="Horizontal" 
+                  Grid.Column="1" Grid.Row="4"
+                  IsHitTestVisible="True">
+      <ComboBox x:Name="x_endComboBox" Width="80"
+                  Margin="0,0,5,0"
+                  SelectionChanged="End_SelectionChanged">
+        <ComboBoxItem>Never</ComboBoxItem>
+        <ComboBoxItem>After</ComboBoxItem>
+        <ComboBoxItem>On date</ComboBoxItem>
+      </ComboBox>
+      <StackPanel x:Name="x_afterPanel" Visibility="Hidden"
+                    Orientation="Horizontal">
+        <GuiControls:NumericTextBox x:Name="x_afterTextBox"
+                                      Text="1"
+                                      Width="30"
+                                      TextAlignment="Center"
+                                      TextChanged="AfterTextBox_TextChanged"/>
+        <Label Content=" times"/>
+      </StackPanel>
+      <GuiControls:DateTimeEntryBox ControlType="Date"
+                                      Visibility="Hidden"
+                                    DateTimeChanged="EndOn_Changed"
+                                      x:Name="x_endOnBox"/>
+      <!--<Label>Edit</Label>
+        <Path 
+      x:Name="Arrow"
+      Grid.Column="1"     
+      Fill="{StaticResource GlyphBrush}"
+      HorizontalAlignment="Center"
+      VerticalAlignment="Center"
+      Data="M 0 0 L 4 4 L 8 0 Z"/>-->
+    </StackPanel>
+
+  </Grid>
+</UserControl>

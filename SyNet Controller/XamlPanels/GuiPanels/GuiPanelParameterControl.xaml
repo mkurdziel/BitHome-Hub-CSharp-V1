@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="SyNet.XamlPanels.GuiPanels.GuiPanelParameterControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:GuiHelpers="clr-namespace:SyNet.GuiHelpers"
+             Canvas.Top="{Binding ControlPositionTop, Mode=TwoWay}"
+             Canvas.Left="{Binding ControlPositionLeft, Mode=TwoWay}"
+             Canvas.ZIndex="{Binding ControlPositionZIndex, Mode=TwoWay}"
+             >
+  <UserControl.Resources>
+    <GuiHelpers:BoolToVisibilityConverter x:Key="BoolVisibilityConverter" />
+  </UserControl.Resources>
+  <!--<StackPanel Name="x_container" Orientation="Horizontal">
+      <Label Content="{Binding Name}" MinWidth="75"/>
+    </StackPanel>-->
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Label Content="{Binding Name}" MinWidth="50"
+           Name="x_label"
+           Visibility="{Binding IsLabelVisible, Converter={StaticResource BoolVisibilityConverter}}"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Center"
+           />
+    <ContentControl Name="x_container"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Grid.Column="1"
+                    Grid.Row="1"/>
+  </Grid>
+</UserControl>

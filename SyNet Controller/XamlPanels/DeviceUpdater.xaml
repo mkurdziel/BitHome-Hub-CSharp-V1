@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="SyNet.GuiControls.DeviceUpdater"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+  <StackPanel>
+    <StackPanel Orientation="Horizontal">
+      <Label>Filename:</Label>
+      <Button Click="ButtonFileSelect_Click">Select</Button>
+      <Label x:Name="m_LabelFileName" Content="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}},Path=FileName}"/>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal">
+      <Label>Node:</Label>
+      <ComboBox x:Name="m_ComboBoxNodeList"
+                Width="250"></ComboBox>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal">
+      <Button x:Name="m_ButtonDownload" Click="ButtonDownload_Click">Download</Button>
+      <Button x:Name="m_ButtonCancel" Click="ButtonStop_Click">Cancel</Button>
+    </StackPanel>
+    <ProgressBar x:Name="m_ProgressBarDownload" Height="20" Maximum="100" Margin="0, 5, 0, 5"/>
+    <StackPanel Orientation="Horizontal">
+      <Rectangle Fill="Red" Width="10" Height="10"
+                 x:Name="m_RectConnect" Stroke="Black" StrokeThickness="0.5"></Rectangle>
+      <Label>Status : </Label>
+      <Label x:Name="m_LabelStatus">Idle</Label>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal">
+      <Rectangle Fill="Red" Width="10" Height="10"
+                 x:Name="m_RectDownload" Stroke="Black" StrokeThickness="0.5"></Rectangle>
+      <Label>Retries : </Label>
+      <Label x:Name="m_LabelRetries">0</Label>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal">
+      <Rectangle Fill="Red" Width="10" Height="10"
+                 x:Name="m_RectComplete" Stroke="Black" StrokeThickness="0.5"></Rectangle>
+      <Label>Download : </Label>
+      <Label x:Name="m_LabelDownload">Idle</Label>
+    </StackPanel>
+
+    <ScrollViewer>
+      <TextBlock x:Name="m_TextBlockStatus">
+      Status log
+      </TextBlock>
+    </ScrollViewer>
+  </StackPanel>
+</UserControl>

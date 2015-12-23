@@ -1,0 +1,1033 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DB5DBBBD-00F8-4E4C-B81B-7A9357FD4CF4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SyNet</RootNamespace>
+    <AssemblyName>SyNetController</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\SyNetController.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="GuiControls\ColorPickerComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GuiControls\DateRepeat\DateRepeatControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GuiControls\DateRepeat\DateRepeatDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GuiControls\DateRepeat\DateRepeatPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GuiControls\DateRepeat\DateRepeatResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GuiControls\ParameterEditControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GuiControls\DateTimeEntryBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gui\Controls\SnButton\SnButtonConfig.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gui\Controls\SnGroupBox\SnGroupBoxConfig.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gui\Dialogs\ValueEntryDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gui\GuiPanelDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gui\Toolbox\GuiPanelItemConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gui\Toolbox\LabelConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gui\Toolbox\PanelConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gui\Toolbox\ToolboxTriggerPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gui\Toolbox\ToolboxActionPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gui\Toolbox\ToolboxWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ResourceDictionaries\Expander.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ResourceDictionaries\GenericResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ResourceDictionaries\SelectableControlResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ResourceDictionaries\Shared.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XamlPanels\ActionConditionDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XamlPanels\ActionSelectDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XamlPanels\DateTimeTriggerEditPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XamlPanels\EventActionEditPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XamlPanels\EventParametersEditPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XamlPanels\EventEditPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XamlPanels\MessageTriggerEditPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XamlPanels\GuiPanels\GuiTriggerConfigDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XamlPanels\GuiPanels\GuiPanelConfigDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XamlPanels\GuiPanels\GuiActionConfigDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XamlPanels\GuiPanels\GuiControlConfigDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XamlPanels\GuiPanels\GuiPanelItemConfigWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XamlPanels\GuiPanels\GuiPanelParameterControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XamlPanels\TriggerSelectDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XamlPanels\EventsPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XamlPanels\SequenceActionEditPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XamlPanels\RenameDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XamlPanels\ActionsPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XamlPanels\DeviceConfigSet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XamlPanels\DeviceInfoSet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XamlPanels\DeviceUpdater.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XamlPanels\EditPreferencesDlg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XamlPanels\NodeList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ControllerGUI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XamlPanels\ParameterEditPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\Action.cs" />
+    <Compile Include="Actions\ActionItem.cs" />
+    <Compile Include="Actions\ActionManager.cs" />
+    <Compile Include="Actions\ActionParameter.cs" />
+    <Compile Include="BindingHelpers\ArgumentHelper.cs" />
+    <Compile Include="BindingHelpers\BindingProxy.cs" />
+    <Compile Include="BindingHelpers\DispatchingCollection.cs" />
+    <Compile Include="BindingHelpers\DispatchingList.cs" />
+    <Compile Include="BindingHelpers\EventHelper.cs" />
+    <Compile Include="BindingHelpers\ExceptionHelper.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="DataHelpers\DynamicMethods.cs" />
+    <Compile Include="DataHelpers\PropertyDictionary.cs" />
+    <Compile Include="EventArguments\GuiSelectionChangedEventArgs.cs" />
+    <Compile Include="Events\EventAction.cs" />
+    <Compile Include="Events\EventActionConditional.cs" />
+    <Compile Include="Events\Triggers\DateTimeTrigger.cs" />
+    <Compile Include="Actions\DelayAction.cs" />
+    <Compile Include="Events\Event.cs" />
+    <Compile Include="EventArguments\ActionModifiedEventArgs.cs" />
+    <Compile Include="DataHelpers\AVLTree.cs" />
+    <Compile Include="DataHelpers\BinaryTree.cs" />
+    <Compile Include="DataHelpers\SerializableDictionaryWithID.cs" />
+    <Compile Include="DataHelpers\IObjectWithID.cs" />
+    <Compile Include="DataHelpers\SerializableDictionary.cs" />
+    <Compile Include="Actions\DeviceAction.cs" />
+    <Compile Include="DeviceFunction.cs" />
+    <Compile Include="DeviceParameter.cs" />
+    <Compile Include="EventArguments\FunctionReceivedEventArgs.cs" />
+    <Compile Include="Events\EventParameter.cs" />
+    <Compile Include="Events\EventScheduler.cs" />
+    <Compile Include="Events\Triggers\StatusTrigger.cs" />
+    <Compile Include="Events\Triggers\TriggerParameter.cs" />
+    <Compile Include="GuiControls\ColorPickerComboBox.xaml.cs">
+      <DependentUpon>ColorPickerComboBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GuiControls\DateRepeat\DateRepeatComboBox.cs" />
+    <Compile Include="GuiControls\DateRepeat\DateRepeatControl.xaml.cs">
+      <DependentUpon>DateRepeatControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GuiControls\DateRepeat\DateRepeatDialog.xaml.cs">
+      <DependentUpon>DateRepeatDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GuiControls\DateRepeat\DateRepeatPopup.xaml.cs">
+      <DependentUpon>DateRepeatPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GuiControls\DesignerCanvas.Commands.cs" />
+    <Compile Include="GuiControls\DesignerCanvas.cs" />
+    <Compile Include="GuiControls\FontInfo.cs" />
+    <Compile Include="GuiControls\IGuiGroupable.cs" />
+    <Compile Include="GuiControls\NumericTextBox.cs" />
+    <Compile Include="GuiControls\ParameterEditControl.xaml.cs">
+      <DependentUpon>ParameterEditControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GuiControls\ResizingCanvas.cs" />
+    <Compile Include="GuiControls\DateTimeEntryBox.xaml.cs">
+      <DependentUpon>DateTimeEntryBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GuiHelpers\DragDropHelper.cs" />
+    <Compile Include="GuiHelpers\Adorners\DraggedAdorner.cs" />
+    <Compile Include="GuiHelpers\DragDropManager\DragDropManager.cs" />
+    <Compile Include="GuiHelpers\DragDropManager\DropPreviewAdorner.cs" />
+    <Compile Include="GuiHelpers\DragDropManager\IDragSourceAdvisor.cs" />
+    <Compile Include="GuiHelpers\DragDropManager\IDropTargetAdvisor.cs" />
+    <Compile Include="GuiHelpers\ImageButton.cs" />
+    <Compile Include="GuiHelpers\Adorners\InsertionAdorner.cs" />
+    <Compile Include="GuiHelpers\Thumbs\MoveThumb.cs" />
+    <Compile Include="GuiHelpers\Thumbs\ResizeThumb.cs" />
+    <Compile Include="GuiHelpers\Adorners\RubberbandAdorner.cs" />
+    <Compile Include="GuiHelpers\SelectionService.cs" />
+    <Compile Include="GuiHelpers\Thumbs\SelectThumb.cs" />
+    <Compile Include="GuiHelpers\Utilities.cs" />
+    <Compile Include="GuiHelpers\TemplateSelectors.cs" />
+    <Compile Include="EventArguments\NodeDiscoveredEventArgs.cs" />
+    <Compile Include="EventArguments\ParameterModifiedEventArgs.cs" />
+    <Compile Include="Events\Triggers\MessageTrigger.cs" />
+    <Compile Include="Events\Triggers\Trigger.cs" />
+    <Compile Include="Gui\Adorners\GuideAdorner.cs" />
+    <Compile Include="Gui\Adorners\HighlightAdorner.cs" />
+    <Compile Include="Gui\Adorners\ResizeAdorner.cs" />
+    <Compile Include="Gui\Adorners\MoveAdorner.cs" />
+    <Compile Include="Gui\Adorners\RubberbandAdorner.cs" />
+    <Compile Include="Gui\Adorners\SelectAdorner.cs" />
+    <Compile Include="Gui\Controls\SnButton\SnButtonConfig.xaml.cs">
+      <DependentUpon>SnButtonConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Controls\SnPanel\SnPanel.cs" />
+    <Compile Include="Gui\Controls\SnSlider\SnSlider.cs" />
+    <Compile Include="Gui\Controls\SnButton\SnButton.cs" />
+    <Compile Include="Gui\Controls\SnGroupBox\SnGroupBoxConfig.xaml.cs">
+      <DependentUpon>SnGroupBoxConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Controls\SnGroupBox\SnGroupBox.cs" />
+    <Compile Include="Gui\Controls\SnLabel\SnLabel.cs" />
+    <Compile Include="Gui\Controls\SnTextBox\SnTextBox.cs" />
+    <Compile Include="Gui\DesignerCanvas.cs" />
+    <Compile Include="Gui\Dialogs\ValueEntryDialog.xaml.cs">
+      <DependentUpon>ValueEntryDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\DragDropGuiSourceAdvisor.cs" />
+    <Compile Include="Gui\DragDropGuiTargetAdvisor.cs" />
+    <Compile Include="Gui\GuiPanelDesigner.xaml.cs">
+      <DependentUpon>GuiPanelDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\GuiPanelItem.cs" />
+    <Compile Include="Gui\Interfaces\IControlContainer.cs" />
+    <Compile Include="Gui\Interfaces\IExecuting.cs" />
+    <Compile Include="Gui\Interfaces\IGuiPanelControl.cs" />
+    <Compile Include="Gui\Interfaces\IGuiPanelValueControl.cs" />
+    <Compile Include="Gui\Models\FontInfo.cs" />
+    <Compile Include="Gui\Models\GuiAction.cs" />
+    <Compile Include="Gui\Models\GuiManager.cs" />
+    <Compile Include="Gui\Models\GuiPanel.cs" />
+    <Compile Include="Gui\Models\GuiPanelControlInfo.cs" />
+    <Compile Include="Gui\Models\GuiParameter.cs" />
+    <Compile Include="Gui\Models\GuiTriggerItem.cs" />
+    <Compile Include="Gui\SelectionService.cs" />
+    <Compile Include="Gui\Thumbs\ResizeThumb.cs" />
+    <Compile Include="Gui\Thumbs\MoveThumb.cs" />
+    <Compile Include="Gui\Thumbs\SelectThumb.cs" />
+    <Compile Include="Gui\Toolbox\GuiPanelItemConfig.xaml.cs">
+      <DependentUpon>GuiPanelItemConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Toolbox\LabelConfig.xaml.cs">
+      <DependentUpon>LabelConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Toolbox\PanelConfig.xaml.cs">
+      <DependentUpon>PanelConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Toolbox\ToolboxTriggerPanel.xaml.cs">
+      <DependentUpon>ToolboxTriggerPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Toolbox\ToolboxActionPanel.xaml.cs">
+      <DependentUpon>ToolboxActionPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\Toolbox\ToolboxWindow.xaml.cs">
+      <DependentUpon>ToolboxWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageTypes\MessageCreator.cs" />
+    <Compile Include="Resources\Misc\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Misc\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\ActionConditionDialog.xaml.cs">
+      <DependentUpon>ActionConditionDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\ActionSelectDialog.xaml.cs">
+      <DependentUpon>ActionSelectDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\DateTimeTriggerEditPanel.xaml.cs">
+      <DependentUpon>DateTimeTriggerEditPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\EventActionEditPanel.xaml.cs">
+      <DependentUpon>EventActionEditPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\EventParametersEditPanel.xaml.cs">
+      <DependentUpon>EventParametersEditPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\EventEditPanel.xaml.cs">
+      <DependentUpon>EventEditPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\MessageTriggerEditPanel.xaml.cs">
+      <DependentUpon>MessageTriggerEditPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\GuiPanels\GuiTriggerConfigDialog.xaml.cs">
+      <DependentUpon>GuiTriggerConfigDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\GuiPanels\GuiPanelConfigDialog.xaml.cs">
+      <DependentUpon>GuiPanelConfigDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\GuiPanels\GuiActionConfigDialog.xaml.cs">
+      <DependentUpon>GuiActionConfigDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\GuiPanels\GuiControlConfigDialog.xaml.cs">
+      <DependentUpon>GuiControlConfigDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\GuiPanels\GuiPanelItemConfigWindow.xaml.cs">
+      <DependentUpon>GuiPanelItemConfigWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\GuiPanels\GuiPanelParameterControl.xaml.cs">
+      <DependentUpon>GuiPanelParameterControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\TriggerSelectDialog.xaml.cs">
+      <DependentUpon>TriggerSelectDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\EventsPanel.xaml.cs">
+      <DependentUpon>EventsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\SequenceActionEditPanel.xaml.cs">
+      <DependentUpon>SequenceActionEditPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\RenameDialog.xaml.cs">
+      <DependentUpon>RenameDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\ActionsPanel.xaml.cs">
+      <DependentUpon>ActionsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\DeviceInfoSet.xaml.cs">
+      <DependentUpon>DeviceInfoSet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GuiHelpers\CloseableTabItem.cs" />
+    <Compile Include="GuiHelpers\ParameterValidationRule.cs" />
+    <Compile Include="Actions\SequenceAction.cs" />
+    <Compile Include="Parameter.cs" />
+    <Compile Include="SyNetSettings.cs" />
+    <Compile Include="ControllerGUI.xaml.cs">
+      <DependentUpon>ControllerGUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\DeviceConfigSet.xaml.cs">
+      <DependentUpon>DeviceConfigSet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\DeviceUpdater.xaml.cs">
+      <DependentUpon>DeviceUpdater.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlPanels\EditPreferencesDlg.xaml.cs">
+      <DependentUpon>EditPreferencesDlg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EBitConverter.cs" />
+    <Compile Include="XamlPanels\NodeList.xaml.cs">
+      <DependentUpon>NodeList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GuiHelpers\Converters.cs" />
+    <Compile Include="GuiHelpers\EditBox.cs" />
+    <Compile Include="GuiHelpers\Adorners\EditBoxAdorner.cs" />
+    <Compile Include="MessageTypes\MsgSyNetBootloadResponse.cs" />
+    <Compile Include="MessageTypes\MsgSyNetBootloadTransmit.cs" />
+    <Compile Include="MessageTypes\MsgSyNetCatalogRequest.cs" />
+    <Compile Include="MessageTypes\MsgSyNetCatalogResponse.cs" />
+    <Compile Include="MessageTypes\MsgSyNetDeviceStatus.cs" />
+    <Compile Include="MessageTypes\MsgSyNetDeviceStatusRequest.cs" />
+    <Compile Include="MessageTypes\MsgSyNetFunctionReceive.cs" />
+    <Compile Include="MessageTypes\MsgSyNetFunctionTransmit.cs" />
+    <Compile Include="MessageTypes\MsgSyNetInformationSet.cs" />
+    <Compile Include="MessageTypes\MsgSyNetParameterRequest.cs" />
+    <Compile Include="MessageTypes\MsgSyNetParameterResponse.cs" />
+    <Compile Include="MessageTypes\MsgSyNetRx.cs" />
+    <Compile Include="MessageTypes\MsgSyNetTx.cs" />
+    <Compile Include="MessageTypes\MsgZigbee.cs" />
+    <Compile Include="MessageTypes\MsgZigbeeATCmd.cs" />
+    <Compile Include="MessageTypes\MsgZigbeeATCmdQueueParam.cs" />
+    <Compile Include="MessageTypes\MsgZigbeeATCmdResponse.cs" />
+    <Compile Include="MessageTypes\MsgZigbeeModemStatus.cs" />
+    <Compile Include="MessageTypes\MsgZigbeeRx.cs" />
+    <Compile Include="MessageTypes\MsgZigbeeTxRequest.cs" />
+    <Compile Include="MessageTypes\MsgZigbeeTxStatus.cs" />
+    <Compile Include="MsgFactory.cs" />
+    <Compile Include="NodeManager.cs" />
+    <Compile Include="Device.cs" />
+    <Compile Include="DeviceXBeeSerial.cs" />
+    <Compile Include="MsgDispatcher.cs" />
+    <Compile Include="SyNetNodeList.cs" />
+    <Compile Include="Protocol\Protocol.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="DeviceXBee.cs" />
+    <Compile Include="MessageTypes\Msg.cs" />
+    <Compile Include="SysLogSender.cs" />
+    <Compile Include="XamlPanels\ParameterEditPanel.xaml.cs">
+      <DependentUpon>ParameterEditPanel.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Misc\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Events\Triggers\ClassDiagramTrigger.cd" />
+    <None Include="Properties\app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\StatusActive.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\StatusRecent.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\StatusDead.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\StatusActiveSmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\StatusDeadSmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ApplicationHome.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\StatusUnknown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PlusSmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\MinusSmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Files\Persistence.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ArrowRotateClockwise.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Events\Trigger.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Events\TriggerAdd.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Events\TriggerDelete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Events\TriggerError.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Events\TriggerGo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Events\TriggerLink.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Events\TriggerFolder.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Events\TriggerSmallDelete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Events\TriggerSmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Events\TriggerSmallAdd.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Events\TriggerSmallError.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Events\TriggerSmallGo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Events\TriggerSmallLink.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Events\TriggerSmallFolder.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Nodes\Node.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Nodes\NodeAdd.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Nodes\NodeBlue.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Nodes\NodeDelete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Nodes\NodeEdit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Nodes\NodeError.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Nodes\NodeGo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Nodes\NodeSmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Nodes\NodeSmallAdd.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Nodes\NodeSmallBlue.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Nodes\NodeSmallDelete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Nodes\NodeSmallEdit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Nodes\NodeSmallError.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Nodes\NodeSmallGo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Logs\LogSmall.png" />
+    <Resource Include="Resources\Logs\LogSmallAdd.png" />
+    <Resource Include="Resources\Logs\LogSmallDelete.png" />
+    <Resource Include="Resources\Logs\LogSmallEdit.png" />
+    <Resource Include="Resources\Logs\LogSmallError.png" />
+    <Resource Include="Resources\Logs\LogSmallGo.png" />
+    <Resource Include="Resources\Logs\LogSmallKey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Logs\Log.png" />
+    <Resource Include="Resources\Logs\LogAdd.png" />
+    <Resource Include="Resources\Logs\LogDelete.png" />
+    <Resource Include="Resources\Logs\LogEdit.png" />
+    <Resource Include="Resources\Logs\LogError.png" />
+    <Resource Include="Resources\Logs\LogGo.png" />
+    <Resource Include="Resources\Logs\LogKey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UpdateSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Events\EventSmall.png" />
+    <Resource Include="Resources\Events\EventSmallAdd.png" />
+    <Resource Include="Resources\Events\EventSmallDelete.png" />
+    <Resource Include="Resources\Events\EventSmallEdit.png" />
+    <Resource Include="Resources\Events\EventSmallLink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Actions\Action.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionAdd.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionDelete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionEdit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionError.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionFolder.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionGo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionLink.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionSmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionSmallEdit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionSmallError.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionSmallFolder.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionSmallGo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionSmallLink.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionSmallStacked.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionSmallWhite.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionSmallWhiteAdd.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionSmallWhiteDelete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionSmallWhitEdit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionSmallWhiteError.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionSmallWhiteFolder.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionSmallWhiteLink.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionSmallWhiteStacked.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionSmallWhitGo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Actions\ActionStacked.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Parameters\Parameter.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Parameters\ParameterAdd.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Parameters\ParameterDelete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Parameters\ParameterDisabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Parameters\ParameterEdit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Parameters\ParameterError.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Parameters\ParameterGo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Parameters\ParameterLink.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Parameters\ParameterSmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Parameters\ParameterSmallAdd.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Parameters\ParameterSmallDelete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Parameters\ParameterSmallDisabled.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Parameters\ParameterSmallEdit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Parameters\ParameterSmallError.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Parameters\ParameterSmallGo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Parameters\ParameterSmallLink.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Actions\ActionSmallAdd.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Actions\ActionSmallDelete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UserSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Settings\SettingsSmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Settings\SettingsSmallAdd.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Settings\SettingsSmallEdit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Settings\SettingsSmallError.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Settings\SettingsSmallGo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Settings\Settings.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Settings\SettingsAdd.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Settings\SettingsDelete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Settings\SettingsEdit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Settings\SettingsError.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Settings\SettingsGo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LiveSend.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LiveSendSmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Bullets\BulletDeleteSmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Bullets\BulletDelete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Bullets\BulletAdd.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Bullets\BulletAddSmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GuiPanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GuiPanelSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Bullets\BulletArrowDownSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Bullets\BulletArrowDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ArrowMove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DeleteSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MoveTiny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Settings\SettingsTiny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DeleteTiny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DeleteCircle.png" />
+    <Resource Include="Resources\DeleteCircleSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Designer\MoveToFrontSmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Designer\MoveForwardSmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Designer\MoveToBackSmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Designer\MoveBackwardSmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CornerResizeThumb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Error.png" />
+    <Resource Include="Resources\ErrorSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ApplicationEdit.png" />
+    <Resource Include="Resources\ApplicationEditSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Controls\Textfield.png" />
+    <Resource Include="Resources\Controls\TextfieldSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Pencil.png" />
+    <Resource Include="Resources\PencilSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MoveIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\GuiControls\Gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gui\Controls\SnSlider\SnSlider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gui\Controls\SnTextBox\SnTextBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gui\Controls\SnGroupBox\SnGroupBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Gui\Controls\SnButton\SnButton.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

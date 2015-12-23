@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="SyNet.Gui.GuiPanelDesigner"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:GuiHelpers="clr-namespace:SyNet.GuiHelpers"
+             xmlns:GuiPanels="clr-namespace:SyNet.XamlPanels.GuiPanels"
+             xmlns:GuiControls="clr-namespace:SyNet.GuiControls"
+             xmlns:Gui="clr-namespace:SyNet.Gui"
+             xmlns:DragDropManager="clr-namespace:SyNet.GuiHelpers.DragDropManager"
+             >
+  <UserControl.Resources>
+    <Gui:DragDropGuiTargetAdvisor x:Key="advisor"/>
+  </UserControl.Resources>
+
+    <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Auto">
+      <AdornerDecorator>
+        <Gui:DesignerCanvas x:Name="x_canvas" 
+                            Background="White"
+                            DragDropManager:DragDropManager.DropTargetAdvisor="{StaticResource advisor}"
+                            Focusable="True"
+                            Margin="0"/>
+
+      </AdornerDecorator>
+    </ScrollViewer>
+</UserControl>

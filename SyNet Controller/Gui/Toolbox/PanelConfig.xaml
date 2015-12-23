@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="SyNet.Gui.Toolbox.PanelConfig"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:GuiControls="clr-namespace:SyNet.GuiControls"
+             >
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    
+    <Grid.Resources>
+      <Style TargetType="Label">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+      </Style>
+    </Grid.Resources>
+
+    <!-- Panel Name -->
+    <Label Grid.Row="0" Grid.ColumnSpan="2"
+           Content="Title"/>
+    <TextBox Grid.Row="1" Grid.ColumnSpan="2"
+             x:Name="x_name" Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"/>
+    
+    <Separator Grid.Row="2" Grid.ColumnSpan="2"
+               Margin="0,8,0,8"/>
+
+    <!-- Foreground -->
+    <Label Grid.Row="3" Grid.Column="0"
+           Content="Foreground"/>
+    <GuiControls:ColorPickerComboBox Grid.Row="3" Grid.Column="1"
+                                     x:Name="x_foregroundColor"
+                                     HorizontalAlignment="Stretch"
+                                     Margin="2,4,0,0"
+                                     Width="108"
+                                     PropertyChanged="ForegroundColor_PropertyChanged"
+                                     SnapsToDevicePixels="True"/>
+    <!-- Background -->
+    <Label Grid.Row="4" Grid.Column="0"
+           Content="Background"/>
+    <GuiControls:ColorPickerComboBox Grid.Row="4" Grid.Column="1"
+                                     x:Name="x_backgroundColor"
+                                     HorizontalAlignment="Stretch"
+                                     Width="108"
+                                     Margin="2,4,0,0"
+                                     PropertyChanged="BackgroundColor_PropertyChanged"
+                                     SnapsToDevicePixels="True"/>
+  </Grid>
+</UserControl>

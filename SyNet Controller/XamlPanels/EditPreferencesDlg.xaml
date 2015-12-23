@@ -1,0 +1,36 @@
+﻿<Window x:Class="SyNet.GuiControls.EditPreferencesDlg"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" ResizeMode="NoResize" SizeToContent="WidthAndHeight" Width="372" Height="194">
+  <DockPanel>
+    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="5">
+      <GroupBox Header="Serial Settings">
+        <StackPanel>
+          <Label Content="COM Port"/>
+          <ComboBox x:Name="cbxAvailablePorts"/>
+          <Label Content="Baud Rate"/>
+          <ComboBox x:Name="cbxBaudRates"/>
+        </StackPanel>
+      </GroupBox>
+      <GroupBox Header="Logging">
+        <StackPanel>
+          <Label>Log Directory</Label>
+          <Label x:Name="m_LabelLogDir"></Label>
+          <Button Click="ButtonLogDirSelect_Click">Select File...</Button>
+        </StackPanel>
+      </GroupBox>
+      <GroupBox Header="Syslog'ing" Name="gbxSyslog" Width="153">
+        <Canvas Height="93" Name="cnvSyslog" Width="140">
+          <CheckBox Canvas.Left="0" Canvas.Top="8.54" Height="16" Name="cbxEnableSyslog" Width="120" Checked="cbxEnableSyslog_Checked">Enable Syslog</CheckBox>
+          <TextBlock Canvas.Left="0" Canvas.Top="34.54" Height="21" Name="lblHost" Width="31" Text="Host" />
+          <TextBox Canvas.Left="32.406" Canvas.Top="31.54" Height="23" Name="tbxTargetHost" Width="107.594" />
+          <ComboBox Canvas.Left="46" Canvas.Top="68" Height="23" Name="cbxLogFacility" Width="94" />
+          <TextBlock Canvas.Left="0" Canvas.Top="70" Height="21" Name="lblFacility" Width="43" Text="Facility" />
+        </Canvas>
+      </GroupBox>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
+      <Button x:Name="m_ButtonSave" Click="ButtonSave_Click">Save</Button>
+      <Button IsCancel="True" IsDefault="True">Cancel</Button>
+    </StackPanel>
+  </DockPanel>
+</Window>

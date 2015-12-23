@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="SyNet.XamlPanels.GuiPanels.GuiControlConfigDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:GuiControls="clr-namespace:SyNet.GuiControls"
+             >
+  <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top">
+    <GroupBox Header="Parameter Properties">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label>Name:</Label>
+        <Label Grid.Column="1" Content="{Binding Name}"/>
+
+        <Label Grid.Row="1">Type:</Label>
+        <ComboBox Grid.Row="1" Grid.Column="1"
+                SelectedValue="{Binding ControlType}"
+                Name="x_typeComboBox"/>
+
+        <Label Grid.Row="2" Content="Show Label:"/>
+        <CheckBox Grid.Row="2" Grid.Column="1"
+                VerticalAlignment="Center"
+                IsChecked="{Binding IsLabelVisible}"
+                />
+
+        <Label Grid.Row="3">Label Color:</Label>
+        <GuiControls:ColorPickerComboBox x:Name="x_labelColorComboBox"
+                                       Grid.Row="3" 
+                                       Grid.Column="1"
+                                       HorizontalAlignment="Left"
+                                       PropertyChanged="LabelColor_PropertyChanged"
+                                       />
+
+        <Label Grid.Row="4">Label Size:</Label>
+        <Slider Grid.Row="4" Grid.Column="1"
+              Name="x_fontSizeSlider"
+              Minimum="8" Maximum="100"
+              />
+
+        <Label Grid.Row="5">Label Position:</Label>
+        <ComboBox x:Name="x_labelPositionComboBox"
+                  Grid.Row="5"
+                  Grid.Column="1"
+                  SelectedValue="{Binding LabelPosition, Mode=TwoWay}"/>
+        
+        
+        <Label Grid.Row="6">Zoom:</Label>
+        <Slider Grid.Row="6" Grid.Column="1"
+                Minimum="1.0" Maximum="5.0"
+                Value="{Binding ControlScale, Mode=TwoWay}"/>
+      </Grid>
+    </GroupBox>
+    <ContentControl Name="x_controlConfig"/>
+  </StackPanel>
+</UserControl>

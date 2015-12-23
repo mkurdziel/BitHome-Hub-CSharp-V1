@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="SyNet.Gui.Toolbox.LabelConfig"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Gui="clr-namespace:SyNet.Gui">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <!-- Visibility -->
+    <Label Grid.Column="0" Grid.Row="0">Visible:</Label>
+    <CheckBox Grid.Column="1" Grid.Row="0" x:Name="x_visibleCheckBox"
+              IsChecked="{Binding IsLabelVisible}"/>
+    
+    <!-- Label Text -->
+    <Label Grid.Column="0" Grid.Row="1">Text:</Label>
+    <TextBox Grid.Column="1" Grid.Row="1" x:Name="x_textTextBox"
+             Text="{Binding Path=LabelText, UpdateSourceTrigger=PropertyChanged}"/>
+   
+    <!-- Orientation -->
+    <Label Grid.Column="0" Grid.Row="2">Placement:</Label>
+    <ComboBox Grid.Column="1" Grid.Row="2" x:Name="x_placementComboBox"
+              SelectedValue="{Binding Path=LabelPosition, Mode=TwoWay}">
+    </ComboBox>
+
+    <!-- Sync Size -->
+    <Label Grid.Column="0" Grid.Row="3">Sync Size:</Label>
+    <CheckBox Grid.Column="1" Grid.Row="3" x:Name="x_syncSizeCheckbox"
+              IsChecked="{Binding Path=LabelSizeSync, Mode=TwoWay}"/>
+   
+    <!-- Spacing -->
+    <Label Grid.Column="0" Grid.Row="4">Spacing:</Label>
+    <Slider Grid.Column="1" Grid.Row="4" x:Name="x_spacingSlider"
+            Value="{Binding LabelSpacing}" Minimum="0" Maximum="100"/>
+    
+  </Grid>
+</UserControl>

@@ -1,0 +1,11 @@
+﻿<UserControl x:Class="SyNet.XamlPanels.DeviceInfoSet"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <StackPanel>
+    <StackPanel Orientation="Horizontal">
+      <Label>Name</Label>
+      <TextBox x:Name="m_TextBoxName" Width="100"></TextBox>
+      <Button Name="ButtonName" Click="ButtonName_Click">Set</Button>
+    </StackPanel>
+  </StackPanel>
+</UserControl>

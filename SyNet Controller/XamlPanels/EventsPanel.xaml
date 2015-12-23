@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="SyNet.XamlPanels.EventsPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:XamlPanels="clr-namespace:SyNet.XamlPanels"
+    MinHeight="300" MinWidth="500">
+  <UserControl.Resources>
+    <Style x:Key="menuTitleStyle" TargetType="MenuItem">
+      <Setter Property="IsEnabled" Value="False"/>
+      <Setter Property="Background" Value="LightGray"/>
+    </Style>
+
+  </UserControl.Resources>
+  <Grid Name="x_mainGrid">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" MinHeight="16" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" MinWidth="16" />
+        <ColumnDefinition Width="Auto" MinWidth="16" />
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <!-- Event Selection Panel -->
+      <ListView Name="x_eventList" 
+                  SelectionChanged="EventList_SelectionChanged"
+                  Grid.ColumnSpan="3"
+                  Width="200"
+                  >
+        <ListView.ContextMenu>
+          <ContextMenu>
+            <MenuItem Header="Execute"/>
+          </ContextMenu>
+        </ListView.ContextMenu>
+        <ListView.View>
+          <GridView>
+            <GridViewColumn Header="Enable">
+              <GridViewColumn.CellTemplate>
+                <DataTemplate>
+                  <CheckBox IsChecked="{Binding IsEnabled}"/>
+                </DataTemplate>
+              </GridViewColumn.CellTemplate>
+            </GridViewColumn>
+            <GridViewColumn Header="Event Name" DisplayMemberBinding="{Binding Path=Name}" />
+          </GridView>
+        </ListView.View>
+      </ListView>
+      <Button Grid.Row="1" x:Name="x_AddButton"
+              Click="AddButton_Click">
+        <Image Height="10" Source="pack://application:,,,/Resources/PlusSmall.png" Width="10" />
+      </Button>
+      <Button Name="x_MinusButton" Grid.Row="1" Grid.Column="1"
+              Click="MinusButton_Click">
+        <Image Height="10" Source="pack://application:,,,/Resources/MinusSmall.png" Width="10" />
+      </Button>
+    </Grid>
+    <Label x:Name="x_noSelectionLabel" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Italic" Foreground="DarkGray" FontSize="14">
+      Select an event from the list to configure it...
+    </Label>
+    <XamlPanels:EventEditPanel x:Name="x_eventEditPanel"
+                               Grid.Column="1"
+                               Visibility="Hidden"
+                               DataContext="{Binding ElementName=x_eventList, Path=SelectedValue}" />
+  </Grid>
+</UserControl>
